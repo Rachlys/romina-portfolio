@@ -1,6 +1,9 @@
-
+/* Definimos las Custom properties */
 :root{
+  /* Colores */
   --negro         : #393939;
+  
+  /* Tipografía */
   --tipo-principal   : Helvetica, Arial, sans-serif;
   --tipo-secundaria  : Verdana;
 }
@@ -76,7 +79,11 @@ h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em
   text-decoration: none;
   color:inherit;
 }
-
+/* Evitamos problemas con los pseudoelementos de quotes */
+// blockquote:before, blockquote:after, q:before, q:after {
+// 	content: '';
+// 	content: none;
+// }
 
 /* (Opcional) Configuramos el texto que seleccionamos */
 ::selection {
@@ -92,7 +99,7 @@ form , input, textarea, select , button , label{
     background-color: transparent;
     color:inherit;
     display: block;
-    /* (Opcional) */ appearance: none;
+    // /* (Opcional) */ appearance: none;
 }
 
 /* Reseteamos las tablas */
@@ -114,8 +121,8 @@ body {
   font-size   : 100%;
   font-family : var(--tipo-principal);
   color       : var(--negro);
-  /* (Opcional) */ hyphens: auto;
-  /* (Opcional) */ font-smooth: always;
-  /* (Opcional) */ -webkit-font-smoothing: antialiased;
-  /* (Opcional) */ -moz-osx-font-smoothing: grayscale;
+  // /* (Opcional) */ hyphens: auto;
+  // /* (Opcional) */ font-smooth: always;
+  // /* (Opcional) */ -webkit-font-smoothing: antialiased;
+  // /* (Opcional) */ -moz-osx-font-smoothing: grayscale;
 }
