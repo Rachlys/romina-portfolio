@@ -28,6 +28,13 @@
   }
 }
 
+@mixin movil( $medida : 480px){
+  @media screen and (max-width: $medida){
+    @content
+  }
+}
+
+
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * , *::before , *::after{
   margin: 0;
@@ -126,3 +133,7 @@ body {
   // /* (Opcional) */ -webkit-font-smoothing: antialiased;
   // /* (Opcional) */ -moz-osx-font-smoothing: grayscale;
 }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

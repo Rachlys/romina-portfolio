@@ -1,0 +1,102 @@
+@mixin mv( $medida : 480px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+.home{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    pointer-events: none;
+
+}
+
+
+.home__container{
+    width: 200%;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 3em 0 0 0;
+    transition: all 1s ease;
+
+    
+}
+
+.home__section{
+    margin: auto;
+
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
+    border-radius: 10px;
+    width: 90vw;
+    height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-box-shadow: -1px 3px 32px 0px rgba(255,255,255,0.300);
+    -moz-box-shadow: -1px 3px 32px 0px rgba(255,255,255,0.300);
+    box-shadow: -1px 3px 32px 0px rgba(255, 255, 255, 0.300);
+    
+}
+
+.home__section.active{
+    opacity: 1;
+}
+
+
+.noise{
+    width:150%;
+    height:150%;
+    position: fixed;
+    top:-25%;
+    left:-25%;
+    z-index: 1;
+    background-image: url('/noise.png');
+    opacity: .3;
+    animation: tilt 1s steps(1) infinite;
+}
+
+@keyframes tilt {
+
+    0%,
+  100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -5% -10%;
+  }
+  20% {
+    background-position: -15% 5%;
+  }
+  30% {
+    background-position: 7% -25%;
+  }
+  40% {
+    background-position: 20% 25%;
+  }
+  50% {
+    background-position: -25% 10%;
+  }
+  60% {
+    background-position: 15% 5%;
+  }
+  70% {
+    background-position: 0 15%;
+  }
+  80% {
+    background-position: 25% 35%;
+  }
+  90% {
+    background-position: -10% 10%;
+  }
+}
+
+
+
+
+
