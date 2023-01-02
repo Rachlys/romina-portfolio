@@ -20,10 +20,10 @@ export class HomeComponent implements OnInit {
     console.log(event)
 
     if( event.deltaY === 100){
-      this.numTranslate += -100
+      this.numTranslate += -10
       
     }else{
-      this.numTranslate += 100
+      this.numTranslate += 10
 
     }
   }

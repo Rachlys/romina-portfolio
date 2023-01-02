@@ -7,7 +7,7 @@
 .home{
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: rgb(24, 18, 12);
     overflow: hidden;
     pointer-events: none;
 
@@ -27,8 +27,7 @@
 .home__section{
     margin: auto;
 
-    background: rgb(238,174,202);
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background: rgb(211, 186, 148);
 
     border-radius: 10px;
     width: 90vw;
@@ -56,7 +55,7 @@
     top:-25%;
     left:-25%;
     z-index: 1;
-    background-image: url('/noise.png');
+    background-image: url('/assets/noise.png') ;
     opacity: .3;
     animation: tilt 1s steps(1) infinite;
 }
