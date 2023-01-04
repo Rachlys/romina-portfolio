@@ -1,0 +1,28 @@
+section{
+    display: flex;
+    justify-content: flex-start;    
+    align-items: center;
+}
+.title_contain{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.title{
+    background-color: pink;
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+.title::after{
+    content: '|';
+    animation: writing 1s steps(5, start) infinite;
+}
+
+@keyframes writing {
+    to{
+        visibility: hidden;
+    }
+
+}
