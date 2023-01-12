@@ -35,8 +35,8 @@ export class AboutMeComponent implements OnInit {
 
     event.preventDefault();
 
-    this.mouseX = event.clientX
-    this.mouseY = event.clientY
+    this.mouseX = event.offsetX
+    this.mouseY = event.offsetY
 
   }
 
@@ -93,7 +93,8 @@ export class AboutMeComponent implements OnInit {
   }
 
   clip() : string{
-    return `circle(30px at ${this.mouseX - 55}px ${this.mouseY - 45}px)`
+    return `circle(30px at ${this.mouseX }px ${this.mouseY}px)`
+
   }
 
 
