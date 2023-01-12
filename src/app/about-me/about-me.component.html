@@ -1,8 +1,24 @@
-<section>
 
-    <div class="title_contain">
-        <button (click)="pause()">stop</button>
-        <h1 class="title">{{text_show}}</h1>
-    </div>
+<section>
+    <div class="section__cover" [ngStyle]="{'clip-path': clip() }"></div>
 
 </section>
+
+<!-- <div class="title_contain">
+
+    <h1>Hola!</h1>
+    
+    <h2 *ngIf="!fuente" (click)="cancel_writing()" class="title">Me llamo Romina y soy desarrolladora web junior{{decoration}}
+    </h2>
+
+    <h2 *ngIf="fuente" (click)="cancel_writing()" class="title">{{text_show}}{{decoration}}</h2>
+</div>
+
+
+
+<div class="parrafo">
+    mao
+</div>
+
+</div>
+ -->

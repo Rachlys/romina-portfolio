@@ -9,11 +9,18 @@ export class HomeComponent implements OnInit {
 
   numTranslate : number = 0
   defaultTouch = { x: 0, y: 0, time: 0 };
+  mouseX : number = 0
+  mouseY : number = 0
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+
+
 
   @HostListener("wheel" , ["$event"])
   public onScroll( event: WheelEvent){
@@ -60,6 +67,7 @@ export class HomeComponent implements OnInit {
 
   }
 
+
   doSwipeLeft(event : TouchEvent) {
     this.numTranslate += -100
   }
@@ -72,6 +80,5 @@ export class HomeComponent implements OnInit {
   translate() : string{
     return `translate(${this.numTranslate}vw)`
   }
-
 
 }

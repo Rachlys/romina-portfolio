@@ -4,8 +4,8 @@
   --negro         : #393939;
   
   /* Tipografía */
-  --tipo-principal   : Helvetica, Arial, sans-serif;
-  --tipo-secundaria  : Verdana;
+  --tipo-principal   : 'Noto Serif Toto', serif;
+  --tipo-secundaria  : 'Noto Serif Toto', serif;;
 }
   
 /* (Opcional) Las adaptamos al modo oscuro */
@@ -28,14 +28,6 @@
   }
 }
 
-@mixin movil( $medida : 480px){
-  @media screen and (max-width: $medida){
-    @content
-  }
-}
-
-
-/* Reseteamos los margin y paddings de todas las etiquetas */
 * , *::before , *::after{
   margin: 0;
   padding: 0;
@@ -80,6 +72,7 @@ html {
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
 h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+  font-family: 'Noto Serif Toto', serif;
   font-size: inherit;
   font-weight: inherit;
   font-style: inherit;
@@ -136,4 +129,5 @@ body {
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; font-family: 'Noto Serif Toto', serif }

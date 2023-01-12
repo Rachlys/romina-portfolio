@@ -1,28 +1,67 @@
-section{
-    display: flex;
-    justify-content: flex-start;    
-    align-items: center;
-}
-.title_contain{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-.title{
-    background-color: pink;
-    display: flex;
-    flex-flow: row nowrap;
-
-}
-.title::after{
-    content: '|';
-    animation: writing 1s steps(5, start) infinite;
-}
-
-@keyframes writing {
-    to{
-        visibility: hidden;
+@mixin mv( $medida : 480px){
+    @media screen and (max-width: $medida) {
+        @content
     }
-
 }
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #a7827f;
+    border-radius: 10px;
+
+    .section__cover{
+        position: absolute;
+        background-color: #DDC8C4;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(30px at 35px 35px);
+    }
+}
+
+
+
+// .section__background{
+//     border-radius: 10px;
+
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     grid-template-rows: 1fr;
+//     height: 100%;
+    
+//     @include mv(768px){
+//         grid-template-columns: 1fr;
+//         grid-template-rows: repeat(2, 1fr);
+//     }
+// }
+// .title_contain{
+//     display: flex;
+//     flex-flow: column nowrap;
+//     justify-content: center;
+//     align-items: flex-start;
+    
+//     padding: 0 0 0 3em;
+
+//     @include mv(768px){
+//         justify-content: center;
+//         align-items: center;
+//         padding: 2em;
+//     }
+
+//     h1{
+//         font-size: 8em;
+//         font-weight: 500;
+//     }
+
+//     h2{
+//         height: 2em;
+//     }
+
+
+// }
+
+
+// .parrafo{
+
+// }
