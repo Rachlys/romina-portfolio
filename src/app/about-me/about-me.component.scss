@@ -13,24 +13,18 @@ section{
     height: 100%;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 2fr) 0.1fr;
     grid-template-rows: 1fr;
+
     gap: 1em;
 
     @include mv(768px){
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: 1fr;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(2, 1fr) 0.2fr;
 
     }
 
-
-    // .section__cover{
-    //     position: absolute;
-    //     background-color: #DDC8C4;
-    //     width: 100%;
-    //     height: 100%;
-    //     clip-path: circle(30px at 35px 35px);
-    // }
 }
 
 
@@ -44,7 +38,7 @@ section{
 
     background-color: #357EA5;
     border-radius: 10px;
-    border: solid black 1px;
+    border: solid var(--negro) 1px;
     padding: 0 0 0 3em;
 
     @include mv(768px){
@@ -56,37 +50,26 @@ section{
 
 
 
-    .title__nav{
-        position: absolute;
-        height: 2em;
-        padding: 0 .5em 0 0;
-        display: flex;
-        flex-flow: row nowrap;
-        right: .5em;
-        top: 1em;
-        gap: .3em;
-
-        .dot_dark{
-            width: .8em;
-            height: .8em;
-            border-radius: 100%;
-            background-color: black;
-
-        }
-    }
-
     .title{
+        width: 100%;
+
+
+        @include mv(768px){
+        width: 90%;
+        text-align: center;
+        }
+
 
         h1{
-            font-size: 500%;
-            font-style: italic;
-            font-weight: 600;
+            font-size: 600%;
+            font-weight: bolder;
         }
     
         h2{
             height: 3em;
             font-size: 100%;
-    
+            width: 100%;
+            cursor: pointer;
         }
 
     }
@@ -94,6 +77,37 @@ section{
 
 
 }
+
+.title__nav{
+    position: absolute;
+    height: 2em;
+    padding: 0 .5em 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    right: .5em;
+    top: 1em;
+    gap: .3em;
+
+    .dot_dark{
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        border: 1px var(--negro) solid;
+
+        &.green{
+            background-color: var(--green);
+        }
+        &.yellow{
+            background-color: var(--yellow);
+        }
+        &.red{
+            background-color: var(--red);   
+        }
+
+    }
+}
+
+
 
 .info__contain{
 
@@ -102,32 +116,100 @@ section{
     grid-template-columns: 1fr;
     gap: 1em;
 
+
     @include mv(768px){
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(3, 1fr); ;
+        grid-template-rows: repeat(3, 1fr) ;
+        grid-template-columns: 1fr ;
     }
 
     .info__cuadro{
+        position: relative;
         border-radius: 10px;
-        border: solid black 1px;
-        padding: .2em;
+        border: solid var(--negro) 1px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        transition: all .9s ease-in;
+        cursor: pointer;
+
+        &:hover{
+            color: white;
+        }
+
+        p{
+            width: 100%;
+            height: 100%;
+            font-size: 600%;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+
+            @include mv(768px){
+                font-size: 100%;
+                font-weight: bolder;
+            }
+        }
     }
 
+}
 
-    .uno{
-        background-color: #5EB092;
-    }
+.info__hover{
+    position: absolute;
+    background-color: var(--negro);
+    width: 100%;
+    height: 0%;
+    border-radius: 10px;
+    transition: all .8s ease-in-out;
 
-    .dos{
-        background-color: #DD6062;
+}
 
-    }
 
-    .tres{
-        background-color: #DDB52A;
+.uno{
+    background-color: var(--green);
 
+    &:hover{
+        .info__hover{
+            height: 100%;
+        }
     }
 }
+
+.dos{
+    background-color: var(--red);
+
+    &:hover{
+        .info__hover{
+            height: 100%;
+        }
+    }
+
+}
+
+.tres{
+    background-color: var(--yellow);
+
+    &:hover{
+        .info__hover{
+            height: 100%;
+        }
+    }
+}
+
+
+.fade_in_animation{
+    animation: fadeIn 1s ease-in both;
+}
+
+
+@keyframes fadeIn{
+    from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+

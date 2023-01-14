@@ -1,45 +1,60 @@
 
 <section>
+        <div class="title_contain" [ngClass]="{ 'fade_in_animation' : mao}" >
 
-    <!-- <div class="section__cover" [ngStyle]="{'clip-path': clip() }"></div> -->
-
-        <div class="title_contain">
-        
             <div class="title__nav"> 
                 <div class="dot_dark green"></div>
-                <div class="dot_dark red "></div>
-                <div class="dot_dark blue"></div>
-
+                <div class="dot_dark yellow "></div>
+                <div class="dot_dark red"></div>
             </div>
             
             <div class="title">
-
-                <h1>HOLA,</h1>
-            
-                <h2 *ngIf="!fuente" (click)="cancel_writing()" class="title">Me llamo Romina y soy desarrolladora web junior{{decoration}}
-                </h2>
-            
+                <h1>Hola,</h1>
+                <h2 *ngIf="!fuente" (click)="cancel_writing()" class="title">Me llamo Romina y soy desarrolladora web junior{{decoration}}</h2>
                 <h2 *ngIf="fuente" (click)="cancel_writing()" class="title">{{text_show}}{{decoration}}</h2>
-            
-
             </div>
-
 
         </div> 
 
+        <div class="info__contain" [ngClass]="{ 'fade_in_animation' : mao}"  >
+            
+            <div class="info__cuadro uno"> 
+                
+                <div class="info__hover"></div>
 
+                <div class="title__nav"> 
+                    <div class="dot_dark green"></div>
+                    <div class="dot_dark yellow "></div>
+                    <div class="dot_dark red"></div>
+                </div>
 
+                <p> Sobre mi</div>
 
-        <div class="info__contain">
-            <div class="info__cuadro uno"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-            <div class="info__cuadro dos"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
-            <div class="info__cuadro tres"> Lorem ipsum dolor sit amet consectetur adipisicing elit </div>
-        
+            <div class="info__cuadro dos"> 
+                <div class="info__hover"></div>
+
+                <div class="title__nav"> 
+                    <div class="dot_dark green"></div>
+                    <div class="dot_dark yellow "></div>
+                    <div class="dot_dark red"></div>
+                </div>
+                
+                <p> Proyectos </p>
+
+            </div>
+            
+            <div class="info__cuadro tres"> 
+                <div class="info__hover"></div>
+
+                <div class="title__nav"> 
+                    <div class="dot_dark green"></div>
+                    <div class="dot_dark yellow "></div>
+                    <div class="dot_dark red"></div>
+                </div>
+                <p> Contacto </p>
+            </div>        
         </div>
 
-        
-
-
-
+        <div class="flecha"> > </div>
 
 </section>

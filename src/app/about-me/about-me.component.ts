@@ -9,7 +9,7 @@ export class AboutMeComponent implements OnInit {
 
   public text_show : string = ''
   public text : string = 'Me llamo Romina y soy desarrolladora web junior'
-  public decoration : string = '|'
+  public decoration : string = '_'
   public array_text : any = new String(this.text)
   public control_interval : any;
   public control_interval2 : any;
@@ -21,13 +21,15 @@ export class AboutMeComponent implements OnInit {
 
   public mouseX : number = 0
   public mouseY : number = 0
-
+  
+  public mao : boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
     this.writing()
     this.animation_decor()
+    this.mao = true
   }
 
   @HostListener("document:mousemove", ['$event'])
@@ -84,7 +86,7 @@ export class AboutMeComponent implements OnInit {
         this.decoration = ''
         this.display = !this.display
       }else{
-        this.decoration = '|'
+        this.decoration = '_'
         this.display = !this.display
 
       }
@@ -96,6 +98,7 @@ export class AboutMeComponent implements OnInit {
     return `circle(30px at ${this.mouseX }px ${this.mouseY}px)`
 
   }
+
 
 
 }
