@@ -7,72 +7,71 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class AboutMeComponent implements OnInit {
 
-  public text_show : string = ''
-  public text : string = 'Me llamo Romina y soy desarrolladora web junior'
+  public text_shown : string = ''
+  public text : string = 'Mi nombre es Romina y soy desarrolladora web fullstack junior'
   public decoration : string = '_'
   public array_text : any = new String(this.text)
-  public control_interval : any;
-  public control_interval2 : any;
-  public control_interval_decor : any;
   public indice : number = 0;
-  public fuente : boolean = true
-  public display : boolean = false
+  public show_animate_text : boolean = true
+
+  public interval_write : any;
+  public interval_deswrite : any;
+
+  public show_decoration : boolean = false
+  public interval_decor : any;
   public time_out : any;
 
-  public mouseX : number = 0
-  public mouseY : number = 0
+  // public mouseX : number = 0
+  // public mouseY : number = 0
   
-  public mao : boolean = false;
-
   constructor() { }
 
   ngOnInit(): void {
     this.writing()
     this.animation_decor()
-    this.mao = true
   }
 
-  @HostListener("document:mousemove", ['$event'])
-  mousemove(event : MouseEvent) {
+  // @HostListener("document:mousemove", ['$event'])
+  // mousemove(event : MouseEvent) {
 
-    event.preventDefault();
+  //   event.preventDefault();
 
-    this.mouseX = event.offsetX
-    this.mouseY = event.offsetY
+  //   this.mouseX = event.offsetX
+  //   this.mouseY = event.offsetY
 
-  }
+  // }
 
 
   cancel_writing() : void{
-    this.fuente  = !this.fuente
+    this.show_animate_text  = !this.show_animate_text
   }
 
   writing() : void{
-      this.control_interval = setInterval(() =>{
+      this.interval_write = setInterval(() =>{
       
-        this.text_show += this.array_text[this.indice]
+        this.text_shown += this.array_text[this.indice]
         
         this.indice++;
   
         if(this.indice === this.array_text.length){
   
-          clearInterval(this.control_interval)
+          clearInterval(this.interval_write)
           this.indice = 0
   
-          this.time_out = setTimeout(() =>{ this.deswriting() }, 3000)
+          this.time_out = setTimeout(() =>{ this.unwriting() }, 3000)
           
         }
   
       }, 100)
   }
 
-  deswriting() : void {
+  unwriting() : void {
 
-    this.control_interval2 = setInterval(() =>{
-      this.text_show = this.text_show.slice(0 , -1)
+    this.interval_deswrite = setInterval(() =>{
+      this.text_shown = this.text_shown.slice(0 , -1)
     
-      if(this.text_show.length === 0){
-        clearInterval(this.control_interval2)
+      if(this.text_shown.length === 0){
+        clearInterval(this.interval_deswrite)
         this.writing()
       }
     },100)
@@ -80,24 +79,24 @@ export class AboutMeComponent implements OnInit {
 
 
   animation_decor() : void {
-    this.control_interval_decor = setInterval(() =>{
+    this.interval_decor = setInterval(() =>{
 
-      if(this.display === true){
+      if(this.show_decoration === true){
         this.decoration = ''
-        this.display = !this.display
+        this.show_decoration = !this.show_decoration
       }else{
         this.decoration = '_'
-        this.display = !this.display
+        this.show_decoration = !this.show_decoration
 
       }
     }, 400)
 
   }
 
-  clip() : string{
-    return `circle(30px at ${this.mouseX }px ${this.mouseY}px)`
+  // clip() : string{
+  //   return `circle(30px at ${this.mouseX }px ${this.mouseY}px)`
 
-  }
+  // }
 
 
 

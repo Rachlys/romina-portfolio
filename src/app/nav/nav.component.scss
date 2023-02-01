@@ -1,0 +1,126 @@
+@mixin mv( $medida : 480px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+*{
+    box-sizing: border-box;
+
+}
+
+.info__contain{
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1em;
+
+
+    @include mv(768px){
+        grid-template-rows: repeat(3, 1fr) ;
+        grid-template-columns: 1fr ;
+    }
+
+    .info__cuadro{
+        position: relative;
+        border-radius: 10px;
+        border: solid var(--negro) 1px;
+        display: flex;
+        transition: all .9s ease-in;
+        cursor: pointer;
+
+        &:hover{
+            color: white;
+        }
+
+        p{
+            width: 100%;
+            height: 100%;
+            font-size: 600%;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+
+            @include mv(768px){
+                font-size: 100%;
+                font-weight: bolder;
+            }
+        }
+    }
+
+}
+
+.info__hover{
+    position: absolute;
+    background-color: var(--negro);
+    width: 100%;
+    height: 0%;
+    border-radius: 10px;
+    transition: all .8s ease-in-out;
+
+}
+
+
+.uno{
+    background-color: var(--green);
+
+    &:hover{
+        .info__hover{
+            height: 100%;
+        }
+    }
+}
+
+.dos{
+    background-color: var(--red);
+
+    &:hover{
+        .info__hover{
+            height: 100%;
+        }
+    }
+
+}
+
+.tres{
+    background-color: var(--yellow);
+
+    &:hover{
+        .info__hover{
+            height: 100%;
+        }
+    }
+}
+
+.title__nav{
+    position: absolute;
+    height: 2em;
+    padding: 0 .5em 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    right: .5em;
+    top: 1em;
+    gap: .3em;
+
+    .dot_dark{
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        border: 1px var(--negro) solid;
+
+        &.green{
+            background-color: var(--green);
+        }
+        &.yellow{
+            background-color: var(--yellow);
+        }
+        &.red{
+            background-color: var(--red);   
+        }
+
+    }
+}
+
+

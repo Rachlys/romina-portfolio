@@ -1,20 +1,81 @@
 
-<section class="home">
+<main>
+    <button (click)="inicio()"> < </button>
 
-    <div class="home__container" [ngStyle]="{
-        'transform' : translate() }">
+    <div class="home" [ngStyle]="{'transform' : translate() }">
         
-        <div class="home__section">
-            <app-about-me></app-about-me>
-        </div>
+        <section class="home__section inicio">
+
+            <div class="section__title">
+                <app-about-me></app-about-me>
+            </div>
+
+            <div class="section__nav">
+
+                <div class="nav about_me" (click)="sobremi()"> 
+
+                    <div class="nav__hover"></div>
+
+
+                    <div class="title__decoration"> 
+                        <div class="title__dot green"></div>
+                        <div class="title__dot yellow"></div>
+                        <div class="title__dot red"></div>
+                    </div>
+
+
+                        <p> Sobre mi </p>
+
+                
+                
+                </div>
+
+                <div class="nav proyectos" (click)="proyectos()"> 
     
-        <div class="home__section">
+                    <div class="nav__hover"></div>
+
+                    <div class="title__decoration"> 
+                        <div class="title__dot green"></div>
+                        <div class="title__dot yellow"></div>
+                        <div class="title__dot red"></div>
+                    </div>
+            
+                    <p> Proyectos </p>
+            
+                </div>
+
+
+                <div class="nav contacto" (click)="contacto()"> 
+    
+                    <div class="nav__hover"></div>
+
+                    <div class="title__decoration"> 
+                        <div class="title__dot green"></div>
+                        <div class="title__dot yellow"></div>
+                        <div class="title__dot red"></div>
+                    </div>
+            
+                    <p> Contacto </p>
+            
+                </div>            
+            </div>
+
+        </section>
+        
+        <section class="home__section">
+            <app-sobre-mi></app-sobre-mi>
+        </section>
+
+        <section class="home__section">
             <app-contact-me></app-contact-me>
-        </div>
+        </section>
+
+        <section class="home__section">
+            <app-contact-me></app-contact-me>
+        </section>
 
     </div>
 
-
-</section>
+</main>
 
 

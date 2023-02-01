@@ -6,6 +6,7 @@
   --red           : #DD6062;
   --yellow        : #DDB52A;
   --green         : #5EB092;
+  --white_cream   : #E0D7CF;
   
   /* Tipografía */
   --tipo-principal   : 'Noto Serif Toto', serif;
@@ -39,9 +40,7 @@
   box-sizing: border-box;
   vertical-align: baseline;
 }
-*::before , *::after{
-  display: block;
-}
+
 
 /* Evitamos problemas con las imagenes */
 img , picture , video , iframe , figure{
@@ -106,11 +105,6 @@ form , input, textarea, select , button , label{
     // /* (Opcional) */ appearance: none;
 }
 
-/* Reseteamos las tablas */
-table , tr , td {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
 /* Evitamos problemas con los SVG */
 svg{
@@ -132,6 +126,6 @@ body {
 }
 
 
-html, body { height: 100%; }
+html, body { }
 body { 
   margin: 0; font-family: 'Noto Serif Toto', serif }

@@ -1,23 +1,67 @@
-@mixin mv( $medida : 480px){
+@mixin mv( $medida : 768px){
     @media screen and (max-width: $medida) {
         @content
     }
 }
 
-.mouse{
-    position: fixed;
-    z-index: 1;
-}
-.home{
+
+
+main{
     width: 100vw;
     height: 100vh;
     background-color: #E0D7CF;
     overflow: hidden;
+
+    z-index: 99999;
+    position: relative;
 }
 
+button{
+    position: fixed;
 
-.home__container{
-    width: 200%;
+    height: 2em;
+    width: 2em;
+    background-color: pink;
+    right: 20px;
+    top: 20px;
+    z-index: 999999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    border: 1px var(--negro) solid;
+
+    pointer-events: all;
+
+    @include mv(768px){
+        right: 10px;
+        top: 30px;
+
+
+    position: fixed;
+
+    background-color: pink;
+    right: 20px;
+    top: 20px;
+    z-index: 999999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100%;
+    border: 1px var(--negro) solid;
+
+    pointer-events: all;
+
+    }
+
+}
+
+.home{
+    width: 400%;
     display: flex;
     flex-flow: row nowrap;
     padding: 3em 0 0 0;
@@ -26,12 +70,139 @@
 
 .home__section{
     margin: auto;
-
-    border-radius: 10px;
     width: 90vw;
-    height: 90vh;
+    height: 90vh;    
 
+
+    &.inicio{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1em;
+
+        @include mv(768px){
+            grid-template-columns: 1fr ;
+            grid-template-rows: repeat(2, 1fr);        
+        }
+
+    }
+
+
+}
+
+.section__title{
+    border: 1px solid var(--negro);
+    background-color: #357EA5;
+    border-radius: 10px;
+}
+
+.section__nav{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+
+.nav{
+    width: 100%;
     
+    height: calc(100%/3);
+    position: relative;
+    border: 1px solid var(--negro);
+    border-radius: 10px;   
+    text-align: center;
+    
+    cursor: pointer;
+    
+    @include mv(768px){
+        font-size: 55%;
+    }
+
+    &.about_me{
+        background-color: var(--green);
+
+
+        p{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 500%;
+            font-weight: bolder;
+            transition: all .8s ease-in-out;
+
+        }
+
+        &:hover{
+            color: white;
+            .nav__hover{
+                height: 100%;
+            }
+
+        }
+    }
+
+    &.proyectos{
+        background-color: var(--yellow);
+        
+        p{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 500%;
+            font-weight: bolder;
+            transition: all .8s ease-in-out;
+
+
+        }
+
+        &:hover{
+            color: white;
+
+            .nav__hover{
+                height: 100%;
+            }
+        }
+    }
+
+    &.contacto{
+
+        background-color: var(--red);
+        
+        p{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 500%;
+            font-weight: bolder;
+            transition: all .8s ease-in-out;
+
+        }
+
+        &:hover{
+            color: white;
+
+            .nav__hover{
+                height: 100%;
+            }
+        }
+    }
+}
+
+.nav__hover{
+    position: absolute;
+    background-color: var(--negro);
+    width: 100%;
+    height: 0%;
+    border-radius: 10px;
+    transition: all .8s ease-in-out;
 }
 
 .home__section.active{
@@ -50,6 +221,37 @@
 //     opacity: .3;
 //     animation: tilt 1s steps(1) infinite;
 // }
+
+
+.title__decoration{
+    position: absolute;
+    height: 2em;
+    padding: 0 .5em 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    right: .5em;
+    top: 1em;
+    gap: .3em;
+
+    .title__dot{
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        border: 1px var(--negro) solid;
+
+        &.green{
+            background-color: var(--green);
+        }
+        &.yellow{
+            background-color: var(--yellow);
+        }
+        &.red{
+            background-color: var(--red);   
+        }
+
+    }
+}
+
 
 
 

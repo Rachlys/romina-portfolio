@@ -19,11 +19,29 @@ export class HomeComponent implements OnInit {
   }
 
 
+  sobremi() : void{
+    this.numTranslate = -100
+  }
 
+  proyectos() : void{
+    this.numTranslate = -200
+  }
 
+  contacto() : void{
+    this.numTranslate = -300
+  }
+
+  inicio() : void{
+    this.numTranslate = 0
+    console.log('mao')
+  }
+
+  
 
   @HostListener("wheel" , ["$event"])
   public onScroll( event: WheelEvent){
+    event.preventDefault();
+
     console.log(event)
 
     if( event.deltaY === 100){
@@ -35,46 +53,49 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  @HostListener('touchstart', ['$event'])
-  @HostListener("touchend" , ["$event"])
-  public handleTouch(event : TouchEvent){
+  // @HostListener('touchstart', ['$event'])
+  
+  // @HostListener("touchend" , ["$event"])
+  // public handleTouch(event : TouchEvent){
     
-    event.preventDefault();
+  //   event.preventDefault();
 
-    let touch = event.touches[0] || event.changedTouches[0];
+  //   let touch = event.touches[0] || event.changedTouches[0];
 
-    if (event.type === 'touchstart') {
-      this.defaultTouch.x = touch.pageX;
-      this.defaultTouch.y = touch.pageY;
-      this.defaultTouch.time = event.timeStamp;
-    }else if (event.type === 'touchend') {
-      let deltaX = touch.pageX - this.defaultTouch.x;
-      let deltaTime = event.timeStamp - this.defaultTouch.time;
+  //   if (event.type === 'touchstart') {
+  //     this.defaultTouch.x = touch.pageX;
+  //     this.defaultTouch.y = touch.pageY;
+  //     this.defaultTouch.time = event.timeStamp;
+  //   }else if (event.type === 'touchend') {
+  //     let deltaX = touch.pageX - this.defaultTouch.x;
+  //     let deltaTime = event.timeStamp - this.defaultTouch.time;
 
-      if (deltaTime < 500) {
-          if (Math.abs(deltaX) > 60) {
+  //     if (deltaTime < 500) {
+  //         if (Math.abs(deltaX) > 60) {
 
-            if (deltaX > 0) {
-                  this.doSwipeRight(event);
-              } else {
-                  this.doSwipeLeft(event);
-              }
-          }
+  //           if (deltaX > 0) {
+  //                 this.doSwipeRight(event);
+  //             } else {
+  //                 this.doSwipeLeft(event);
+  //             }
+  //         }
 
-      }
-  }
-
-
-  }
+  //     }
+  // }
 
 
-  doSwipeLeft(event : TouchEvent) {
-    this.numTranslate += -100
-  }
+  // }
 
-  doSwipeRight(event : TouchEvent) {
-    this.numTranslate += 100
-  }
+
+  // doSwipeLeft(event : TouchEvent) {
+  //   this.numTranslate += -100
+  // }
+
+  // doSwipeRight(event : TouchEvent) {
+  //   this.numTranslate += 100
+  // }
+
+
 
 
   translate() : string{
