@@ -1,22 +1,138 @@
-<article>
+<article  [ngStyle]="{'background-color' : getRandomColor() }" >
 
     <header>
-        <h1>TITULO</h1>
+        <h1>{{info.titulo}}</h1>
 
         <div class="buttons">
             <span class="red"></span>
-            <span class="yellow"></span>
+            <span class="yellow" (click)="open()"></span>
             <span class="green"></span>
         </div>
     </header>
 
-    <!-- si es solo texto -->
-    <!-- <main class="texto">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde officia dolorum nulla vitae dolorem, libero consequuntur corporis, eius eos fugiat non? Eveniet facilis commodi a similique! Expedita suscipit repudiandae tempora? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus molestiae unde perferendis. Vitae molestiae odio nemo modi reiciendis! Unde quos sunt repellat nemo architecto. Repellendus excepturi fuga et adipisci! Ad?</p>
-    </main> -->
+    <main class="texto" *ngIf=" info.dato === 'texto'" [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+        <p>{{ info.descripcion}}</p> 
+    </main>
 
-    <!-- si es solo texto -->
-    <main class="imagen">
+
+    <main class="imagen" *ngIf=" info.dato === 'imagen' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+    </main> 
+
+    
+    <main class="logos_tecnologia" *ngIf="info.titulo === 'TECNOLOGIAS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+
+        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
+
+            <div class="logo_i" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
+            <img [src]="cadaLogo.svg" alt="" *ngIf=" cadaLogo.svg">
+            <div class="logo_name"> {{cadaLogo.title_svg}} </div>
+
+        </div>
+
+    </main>
+
+    <main class="logos_otros_programas" *ngIf="info.titulo === 'OTROS PROGRAMAS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+
+        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
+
+            <div class="logo_i" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
+            <img [src]="cadaLogo.svg" alt="" *ngIf=" cadaLogo.svg">
+            
+            <div class="logo_name"> {{cadaLogo.title_svg}} </div>
+        </div>
+
+    </main>
+
+    <main class="logos_form" *ngIf="info.dato === 'logos_form' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+
+        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
+
+            <article class="pop_up__form" *ngIf=" position_form === i" [ngStyle]="{'background-color' : getRandomColor() }">
+
+                <header class="header_pop_up">
+                    <h1>{{cadaLogo.title_svg}}</h1>
+
+                    <div class="buttons__pop_up">
+                        <span class="red" (click)="changePositionForm(5)" ></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                </header>
+
+
+                <main class="main_pop_up">
+                {{cadaLogo.descripcion}}
+                </main>
+
+            </article>
+
+            <div class="logo_i" (click)="changePositionForm(i)" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
+            <div class="logo_name" (click)="changePositionForm(i)"> {{cadaLogo.title_svg}} </div>
+        </div>
+
+    </main>
+
+
+    <main class="lista" *ngIf=" info.titulo=== 'EXPERIENCIAS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+        
+        <ul>
+            <li *ngFor=" let cadaExp of info.logos_info; let i = index">            
+                
+                
+            <article class="pop_up" *ngIf=" position === i" [ngStyle]="{'background-color' : getRandomColor() }">
+
+                <header class="header_pop_up">
+                    <h1>{{cadaExp.title_svg}}</h1>
+
+                    <div class="buttons__pop_up">
+                        <span class="red" (click)="changePosition(3)" ></span>
+                        <span class="yellow"></span>
+                        <span class="green"></span>
+                    </div>
+                </header>
+
+
+                <main class="main_pop_up">
+                {{cadaExp.descripcion}}
+                </main>
+
+            </article>
+
+                <span ><i class="fa-solid fa-file"></i></span>
+                <div class="title" (click)="changePosition(i)"> {{cadaExp.title_svg}} </div>
+
+            </li>
+        </ul>
+    </main>
+
+
+    <div class="contenedor_proyectos" *ngIf="info.titulo=== 'PROYECTOS GRAFICOS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+        
+        <main class="lista_comp">
+            <ul>
+                <li *ngFor=" let cadaExp of info.logos_info; let i = index">            
+                    <span ><i class="fa-solid fa-file"></i></span>
+                    <div class="title" (click)="changePositionProyect(i)"> {{cadaExp.title_svg}} </div>
+                </li>
+            </ul>
+        </main>
+
+        <main class="imagenes">
+                <img *ngFor="let imagen of info.logos_info; let i = index" [src]="imagen.imagen" alt="" [ngStyle]="{'opacity' : position_proyecto === i ? 1 : 0}">
+        </main>
+
+        
+    </div>
+
+
+    <main class="logos_form" *ngIf="info.titulo=== 'PROYECTOS WEB' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+
+        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
+
+            <div class="logo_i" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
+            <div class="logo_name" > {{cadaLogo.title_svg}} </div>
+        </div>
+
     </main>
 
 

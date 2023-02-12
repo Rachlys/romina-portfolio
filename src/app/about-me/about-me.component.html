@@ -1,17 +1,17 @@
-<section>
-        <div class="title">
+<section [ngStyle]="{'background-color' : getRandomColor() }">
+        <header>
+            <div class="buttons">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+        </header>
 
-            <div class="title__decoration"> 
-                <div class="title__dot green"></div>
-                <div class="title__dot yellow"></div>
-                <div class="title__dot red"></div>
-            </div>
-            
-            <div class="title__text">
-                <h1 class="title__h1">Hola,</h1>
-                <h2 *ngIf="!show_animate_text" (click)="cancel_writing()" class="title__h2">Mi nombre es Romina y soy desarrolladora web fullstack junior{{decoration}}</h2>
-                <h2 *ngIf="show_animate_text" (click)="cancel_writing()" class="title__h2">{{text_shown}}{{decoration}}</h2>
-            </div>
-        </div> 
+        <div class="title__text">
+            <h1 class="title__h1">Hola,</h1>
+            <h2 *ngIf="!show_animate_text" (click)="cancel_writing()" class="title__h2">Mi nombre es Romina y soy desarrolladora web fullstack junior{{decoration}}</h2>
+            <h2 *ngIf="show_animate_text" (click)="cancel_writing()" class="title__h2">{{text_shown}}{{decoration}}</h2>
+        </div>
+
 
 </section>

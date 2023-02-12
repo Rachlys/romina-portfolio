@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { BbddService } from '../services/bbdd.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,24 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  info_sobre_mi : Array<any> = []
+  info_proyectos : Array<any> = []
+  
+
   numTranslate : number = 0
   defaultTouch = { x: 0, y: 0, time: 0 };
   mouseX : number = 0
   mouseY : number = 0
 
+  
 
-  constructor() { }
+  constructor(
+    private bbddService : BbddService
+  ) { 
+    this.info_sobre_mi = bbddService.sobre_mi
+    this.info_proyectos = bbddService.proyectos
+
+  }
 
   ngOnInit(): void {
   }

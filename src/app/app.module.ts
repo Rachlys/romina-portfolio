@@ -12,6 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
 import { WindowComponent } from './window/window.component';
+import { WindowNavComponent } from './window-nav/window-nav.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { WindowComponent } from './window/window.component';
     NavComponent,
     SobreMiComponent,
     WindowComponent,
+    WindowNavComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,

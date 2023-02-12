@@ -1,6 +1,65 @@
 
+<button (click)="inicio()"> < </button>
+
+
 <main>
-    <button (click)="inicio()"> < </button>
+    <div class="main_move" [ngStyle]="{'transform' : translate()}" >
+
+        <div class="home">
+            
+            <app-about-me class="first"></app-about-me>
+
+            <div class="second">
+                <app-window-nav class="nav" [titulo]="'Sobre mi'" (click)="sobremi()" > 
+                </app-window-nav>
+                <app-window-nav class="nav" [titulo]="'Proyectos'" (click)="proyectos()"> 
+                </app-window-nav>
+                <app-window-nav class="nav" [titulo]="'Contactame'" (click)="contacto()"> 
+                </app-window-nav>
+            </div>
+        
+        </div>
+    
+        <div class="sobre_mi" >
+
+
+            <app-window class="sobre_mi__first" [info]="info_sobre_mi[0]" >
+            </app-window>
+
+            <app-window class="sobre_mi__second" [info]="info_sobre_mi[1]">
+            </app-window>
+
+            <app-window class="sobre_mi__third" [info]="info_sobre_mi[2]">
+            </app-window>
+
+            <app-window class="sobre_mi__fourth" [info]="info_sobre_mi[3]">
+            </app-window>
+
+            <app-window class="sobre_mi__fifth" [info]="info_sobre_mi[4]">
+            </app-window>
+
+            <app-window class="sobre_mi__sixth" [info]="info_sobre_mi[5]">
+            </app-window> 
+
+
+        </div>
+    
+        <div class="proyectos">
+            <app-window class="proyectos__first" [info]="info_proyectos[0]"></app-window>
+            <app-window class="proyectos__second" [info]="info_proyectos[1]"></app-window>
+
+        </div>
+    
+        <div class="home">
+            
+        </div>
+
+
+    </div>
+    
+</main>
+
+<!-- <main>
 
     <div class="home" [ngStyle]="{'transform' : translate() }">
         
@@ -76,6 +135,6 @@
 
     </div>
 
-</main>
+</main> -->
 
 

@@ -21,14 +21,17 @@ export class AboutMeComponent implements OnInit {
   public interval_decor : any;
   public time_out : any;
 
-  // public mouseX : number = 0
-  // public mouseY : number = 0
+
+  number_random : number = 0
+
   
   constructor() { }
 
   ngOnInit(): void {
     this.writing()
     this.animation_decor()
+    this.mathRandom(3,0)
+
   }
 
   // @HostListener("document:mousemove", ['$event'])
@@ -93,6 +96,23 @@ export class AboutMeComponent implements OnInit {
 
   }
 
+  mathRandom(max : number , min : number) : void{
+    let number = Math.round(Math.random() * (max - min) + min);
+    this.number_random = number
+  }
+
+  getRandomColor() : string{
+      if( this.number_random === 0){
+        return '#DD6062'
+      }else if(this.number_random === 1){
+        return '#357EA5'
+      }else if(this.number_random === 2 ){
+        return '#DDB52A'
+      }else{
+        return '#5EB092'
+      }
+  }
+  
   // clip() : string{
   //   return `circle(30px at ${this.mouseX }px ${this.mouseY}px)`
 

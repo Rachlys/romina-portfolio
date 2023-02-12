@@ -1,0 +1,99 @@
+@mixin mv( $medida : 768px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+article{
+    height: 100%;
+    width: 100%;
+    background-color: var(--green);
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+
+
+    background-image: linear-gradient(to left,  transparent, transparent 50%, var(--negro) 50%, var(--negro), );
+    background-position: 100% 100%;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+
+}
+
+article:hover{
+    background-position: 0 0;
+
+    h1{
+        color: var(--white_cream);
+    }
+}
+
+  
+header{
+
+    padding: 1.5rem 1rem;
+    z-index: 1;
+    width: 100%;
+    height: 1.5em;
+
+    display: flex;
+    justify-content: flex-end;
+    
+    @include mv(768px){
+        padding: 1.1rem 1rem 0 1rem;
+
+    }
+}
+
+.buttons{
+    width: 5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: .5em;
+
+    .red{
+        background-color: var(--red);
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 1px solid var(--negro);
+    }
+
+    .yellow{
+        background-color: var(--yellow);
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 1px solid var(--negro);
+    }
+
+    .green{
+        background-color: var(--green);
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 1px solid var(--negro);
+    }
+
+}
+
+h1{
+    height: 90%;
+    z-index: 1;
+    display: flex;
+    font-size: 4em;
+    justify-content: center;
+    align-items: center;
+    color: var(--negro);
+
+    @include mv(768px){
+        font-size: 200%;
+
+    }
+}

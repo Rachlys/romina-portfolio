@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BbddService } from '../services/bbdd.service';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobreMiComponent implements OnInit {
 
-  constructor() { }
+  info_sobre_mi : Array<any> = []
+
+  constructor(
+    private bbddService : BbddService
+  ) { 
+    this.info_sobre_mi = bbddService.sobre_mi
+  }
 
   ngOnInit(): void {
+    console.log(this.info_sobre_mi)
   }
+
+
 
 }

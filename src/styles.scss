@@ -70,6 +70,7 @@ li {
 
 /* (Opcional) Configuramos anclas suaves */
 html {
+  font-size: 100%;
   scroll-behavior: smooth;
 }
 
@@ -125,7 +126,5 @@ body {
   // /* (Opcional) */ -moz-osx-font-smoothing: grayscale;
 }
 
-
-html, body { }
 body { 
   margin: 0; font-family: 'Noto Serif Toto', serif }
