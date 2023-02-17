@@ -10,21 +10,22 @@ export class HomeComponent implements OnInit {
 
   info_sobre_mi : Array<any> = []
   info_proyectos : Array<any> = []
-  
+  info_contact_me : Array<any> = []
+  show_back : boolean = false
+  show_thank : boolean = false
 
   numTranslate : number = 0
   defaultTouch = { x: 0, y: 0, time: 0 };
   mouseX : number = 0
   mouseY : number = 0
 
-  
 
   constructor(
     private bbddService : BbddService
   ) { 
     this.info_sobre_mi = bbddService.sobre_mi
     this.info_proyectos = bbddService.proyectos
-
+    this.info_contact_me = bbddService.contact_me
   }
 
   ngOnInit(): void {
@@ -56,62 +57,46 @@ export class HomeComponent implements OnInit {
 
     console.log(event)
 
+    console.log(this.numTranslate)
+
+
     if( event.deltaY === 100){
-      this.numTranslate += -10
+
+      if( this.numTranslate === -300){
+        this.numTranslate = -300
+      }else{
+        this.numTranslate += -10
+
+      }
       
     }else{
-      this.numTranslate += 10
+
+      if(this.numTranslate === 0){
+        this.numTranslate = 0
+      }else{
+        this.numTranslate += 10
+
+      }
 
     }
   }
 
-  // @HostListener('touchstart', ['$event'])
-  
-  // @HostListener("touchend" , ["$event"])
-  // public handleTouch(event : TouchEvent){
-    
-  //   event.preventDefault();
 
-  //   let touch = event.touches[0] || event.changedTouches[0];
+  show() : void{
+    this.show_thank = !this.show_thank
+    console.log(this.show_thank)
 
-  //   if (event.type === 'touchstart') {
-  //     this.defaultTouch.x = touch.pageX;
-  //     this.defaultTouch.y = touch.pageY;
-  //     this.defaultTouch.time = event.timeStamp;
-  //   }else if (event.type === 'touchend') {
-  //     let deltaX = touch.pageX - this.defaultTouch.x;
-  //     let deltaTime = event.timeStamp - this.defaultTouch.time;
-
-  //     if (deltaTime < 500) {
-  //         if (Math.abs(deltaX) > 60) {
-
-  //           if (deltaX > 0) {
-  //                 this.doSwipeRight(event);
-  //             } else {
-  //                 this.doSwipeLeft(event);
-  //             }
-  //         }
-
-  //     }
-  // }
-
-
-  // }
-
-
-  // doSwipeLeft(event : TouchEvent) {
-  //   this.numTranslate += -100
-  // }
-
-  // doSwipeRight(event : TouchEvent) {
-  //   this.numTranslate += 100
-  // }
-
-
-
+  }
 
   translate() : string{
     return `translate(${this.numTranslate}vw)`
   }
 
+  show_button() : string{
+    if(this.numTranslate < -9){
+      return '1'
+    }else{
+      return '0'
+    }
+  }
 }

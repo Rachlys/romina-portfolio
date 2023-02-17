@@ -205,9 +205,12 @@ export class BbddService {
 
         },
         {
-          title_svg : 'DIFERENTES PROYECTOS TEKA',
+          title_svg : 'TRIPTICO TEKA',
           imagen : '/assets/teka_proyecto.jpg'
-
+        },
+        {
+          title_svg : 'PACKAGING TEKA',
+          imagen : '/assets/packaging_proyecto.jpg'
         },
       ]
     },
@@ -232,8 +235,63 @@ export class BbddService {
         }
       ]
     },
+    {
+      dato : 'logos_port',
+      titulo : 'REDES DESARROLLO',
+      logos_info : [
+        {
+          i : 'fa-brands fa-behance',
+          title_svg : 'BEHANCE',
+          href: 'https://www.behance.net/rominayupanqu'
+        },
+        {
+          i : 'fa-brands fa-square-github',
+          title_svg : 'GITHUB' ,
+          href: 'https://github.com/rachlys'
+        }
+      ]
+    },
 
   
+  ]
+
+  contact_me : Array<any> = [
+    {
+      dato : 'texto',
+      titulo : 'DISPONIBILIDAD',
+      descripcion : 'Actualmente me encuentro buscando trabajo ya sea teletrabajo o presencial en la zona de Madrid, España. También estoy aceptando trabajos freelance. Si alguna de estas opciones encajan con tu propuesta, sientete libre en contactar conmigo!',
+    },
+    {
+      dato : 'lista',
+      titulo : 'CURRICULUM VITAE',
+      logos_info :  [
+        {
+          title_svg : 'CURRICULUM VITAE',
+          
+          href : '/assets/CV_ROMINA_YUPANQUI_REYNOSO_2021.pdf'
+        },
+      ]
+    },
+    {
+      dato : 'logos_web',
+      titulo : 'LINKEDIN',
+      logos_info : [
+        {
+          i : 'fa-brands fa-linkedin',
+          href: 'https://www.linkedin.com/in/romina-yupanqui-reynoso/'
+        }
+      ]
+    },
+    {      
+      dato : 'logos_web',
+      titulo : 'EMAIL',
+      logos_info : [
+        {
+          i : 'fa-solid fa-envelope',
+          href: 'romiyup@hotmail.com'
+        }
+      ]
+    },
   ]
 
   constructor() { }

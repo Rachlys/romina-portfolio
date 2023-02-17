@@ -7,6 +7,8 @@
   --yellow        : #DDB52A;
   --green         : #5EB092;
   --white_cream   : #E0D7CF;
+  --pink          : #E484A8;
+  --violet        : #9092B8;
   
   /* Tipografía */
   --tipo-principal   : 'Noto Serif Toto', serif;
@@ -16,7 +18,7 @@
 /* (Opcional) Las adaptamos al modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root{
-      --negro         : #ececec;
+      --negro         : #393939;
   }
 }
 
@@ -75,13 +77,18 @@ html {
 }
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
-h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+h1 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
   font-family: 'Noto Serif Toto', serif;
   font-size: inherit;
   font-weight: inherit;
   font-style: inherit;
   text-decoration: none;
   color:inherit;
+}
+
+h2{
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
 }
 /* Evitamos problemas con los pseudoelementos de quotes */
 // blockquote:before, blockquote:after, q:before, q:after {
@@ -90,10 +97,7 @@ h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em
 // }
 
 /* (Opcional) Configuramos el texto que seleccionamos */
-::selection {
-  background-color: var(--negro);
-  color: var(--blanco);
-}
+
 
 /* Nivelamos problemas de tipografías y colocación de formularios */
 form , input, textarea, select , button , label{

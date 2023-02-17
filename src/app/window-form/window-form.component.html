@@ -1,0 +1,60 @@
+<article [ngStyle]="{'background-color' : getRandomColor() }">
+
+    <header>
+        <h1>CONTACTAME</h1>
+
+        <div class="buttons">
+            <span class="red"></span>
+            <span class="yellow" (click)="open()" ></span>
+            <span class="green"></span>
+        </div>
+    </header>
+
+
+    <form ngNoForm [action]="'https://formsubmit.co/romiyup@hotmail.com'" [method]="'POST'"  [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+
+        <div class="section">
+            <label for="GET-name"> 
+                <div class="number green">01</div>
+                <p>¿Cuál es tu nombre?</p>
+            </label>
+            <input id="GET-name" type="text" name="name" required>
+        </div>
+
+        <div class="section">
+            <label for="GET-email"> 
+                <div class="number pink">02</div>
+                <p>¿Cuál es tu correo electrónico?</p>
+            </label>
+            <input id="GET-email" type="text" name="email" required>
+        </div>
+
+        <div class="section">
+            <label for="GET-service"> 
+                <div class="number yellow">03</div>
+                <p>¿En qué tipo de servicio estarías interesad@?</p>
+            </label>
+            <input id="GET-service" type="message" name="service">
+        </div>
+
+
+        <div class="section">
+            <label for="GET-proyecto"> 
+                <div class="number violet">04</div>
+                <p>Cuéntame sobre tu proyecto</p>
+            </label>
+            <input id="GET-proyecto" type="text"  name="proyect">
+        </div>
+
+      <input type="hidden" name="_next" value="https://romina-portfolio.web.app/" >
+      <input type="hidden" name="_captcha" value="false" >
+
+
+        <button type="submit" value="send"> <h1>ENVIAR</h1>  <div class="svg_cont"><svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46451 7.05023C7.46451 6.49795 7.91222 6.05023 8.46451 6.05023H16.9496C16.9497 6.05023 16.9498 6.05023 16.95 6.05023H16.9645C17.5168 6.05023 17.9645 6.49795 17.9645 7.05023V15.5502C17.9645 16.1025 17.5168 16.5502 16.9645 16.5502C16.4122 16.5502 15.9645 16.1025 15.9645 15.5502V9.44973L7.7574 17.6568C7.36688 18.0474 6.73371 18.0474 6.34319 17.6568C5.95266 17.2663 5.95266 16.6331 6.34319 16.2426L14.5356 8.05023H8.46451C7.91222 8.05023 7.46451 7.60252 7.46451 7.05023Z" fill="#393939"/>
+            </svg></div> </button>
+    </form>
+
+
+</article>
+

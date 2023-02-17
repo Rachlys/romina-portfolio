@@ -1,106 +1,105 @@
+@function random_range($min , $max) {
+    $rand : random();
+    $random_range : $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+}
+
 @mixin mv( $medida : 768px){
     @media screen and (max-width: $medida) {
         @content
     }
 }
 
-button{
-    position: fixed;
+html{
+    position: relative;
+}
 
-    height: 2em;
-    width: 2em;
-    background-color: pink;
+button{
+    display: flex;
+    position: fixed;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--pink);
     right: 20px;
     top: 20px;
     z-index: 1;
-    display: flex;
+
     justify-content: center;
     align-items: center;
 
     border-radius: 100%;
     border: 1px var(--negro) solid;
-
-    pointer-events: all;
-
-    @include mv(768px){
-        right: 10px;
-        top: 30px;
-
-
-    position: fixed;
-
-    background-color: pink;
-    right: 20px;
-    top: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 100%;
-    border: 1px var(--negro) solid;
-
-
-    }
-
+    transition: all .3s ease-in;
+    color: var(--negro);
 }
 
-
-
+button:hover{
+    height: 4rem;
+    width: 4rem;
+}
 main{
     width: 100vw;
     height: 100vh;
-    background-color: grey;
     transition: all 1s ease;    
-    overflow: hidden;
+    overflow-x: hidden;
+    background-color: var(--white_cream);
+    
+    position: relative;
+
 
 }
 
 .main_move{
     width: 400%;
     height: 100vh;
+
     display: flex;
     flex-flow: row nowrap;
     transition: all 1s ease;
+    position: relative;
+    background-color: var(--white_cream);
 }
 
 .home{
     margin: auto;
-    width: 90vw;
     height: 90vh;
+    width: 90vw;
     display: flex;
     flex-flow: row nowrap;
-    gap: 1em;
 
-    @include mv(600px){
+    gap: 1rem;
+
+    @include mv(768px){
         display: flex;
         flex-flow: column nowrap;
-    }
-
-    .first{
-        height: 100%;
-        width: calc(120%/2);
-        @include mv(768px){
-            width: 100%;
-            height: 50%;
-        }
-    }
-
-    .second{
-        display: flex;
-        flex-flow: column nowrap;
-        height: 100%;
-        width: calc(70%/2);
-        gap: 2em;
-
-        @include mv(768px){
-            width: 100%;
-            height: 50%;
-            gap: .5em;
-        }
-    }
-    
+    }    
 }
+
+
+.first{
+    height: 100%;
+    width: 100%;
+    @include mv(){
+        width: 100%;
+        height: 50%;
+    }
+}
+
+.second{
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    width: 70%;
+    gap: 2rem;
+
+    @include mv(768px){
+        width: 100%;
+        height: 50%;
+        gap: .5em;
+    }
+}
+
 
 
 .nav{
@@ -117,8 +116,8 @@ main{
     position: relative;
 
     margin: auto;
-    width: 106em;
-    height: 55em;
+    height: 90vh;
+    width: 90vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -146,70 +145,91 @@ main{
 }
 
 .proyectos{
-    background-color: goldenrod;
-
     margin: auto;
-    width: 106em;
-    height: 55em;
+    height: 90vh;
+    width: 90vw;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;    
     justify-content: flex-start;
+    gap: 1rem;
 
     @include mv(768px){
         width: 90vw;
         height: 90vh;
         display: flex;
         flex-flow: column nowrap;
+        gap: 1rem;
     }
     
     .proyectos__first{
         width: 100%;
     }
+
+    .row{
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 1rem;
+        width: 100%;
+
+        @include mv(768px){
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
+        }
+
+        .proyectos__second{
+            width: 50%;
+            @include mv(768px){
+                width: 100%;
+            }
+        }
+    
+        .proyectos__third{
+            width: 50%;
+            @include mv(768px){
+                width: 100%;
+            }
+        }
+
+    }
+
+
 }
 
-.home__section.active{
-    opacity: 1;
-}
-
-
-// .noise{
-//     width:150%;
-//     height:150%;
-//     position: fixed;
-//     top:-25%;
-//     left:-25%;
-//     z-index: 1;
-//     background-image: url('/assets/noise.png') ;
-//     opacity: .3;
-//     animation: tilt 1s steps(1) infinite;
-// }
-
-
-.title__decoration{
-    position: absolute;
-    height: 2em;
-    padding: 0 .5em 0 0;
+.contact_me{
+    margin: auto;
+    height: 90vh;
+    width: 90vw;
     display: flex;
     flex-flow: row nowrap;
-    right: .5em;
-    top: 1em;
-    gap: .3em;
+    align-items: center;    
+    justify-content: space-between;
+    gap: 1rem;
 
-    .title__dot{
-        width: 10px;
-        height: 10px;
-        border-radius: 100%;
-        border: 1px var(--negro) solid;
 
-        &.green{
-            background-color: var(--green);
-        }
-        &.yellow{
-            background-color: var(--yellow);
-        }
-        &.red{
-            background-color: var(--red);   
+    @include mv(768px){
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content:flex-start;
+        gap: 1rem;
+    }
+
+    .column{
+        width: calc(100%/3);
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+
+        @include mv(768px){
+            width: 100%;
+            height: auto;
+
         }
 
     }
@@ -217,3 +237,102 @@ main{
 
 
 
+footer{
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 2.6rem;
+    background-color: var(--negro);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 150%;
+    color: var(--white_cream);
+    gap: 1rem;
+}
+
+.thank_you{
+    width: 10em;
+    height: 10rem;
+    left: 1rem;
+    padding: 2rem;
+    background-color: var(--negro);
+    bottom: 2.5rem;
+    position: fixed;
+}
+
+
+
+.inicio{
+    height: 2rem;
+    width: 2rem;
+    margin: .2rem 0 0 0;
+	clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
+    background-color: var(--white_cream);
+    background-image: linear-gradient(to top,  transparent, transparent 50%, var(--pink) 50%, var(--pink) );
+    background-position: 100% 100%;
+    background-size: 100% 200%;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.inicio:hover{
+    background-position: 0 0;
+
+}
+
+.marquee {
+    height: 3rem;
+    width: 80vw;
+  
+    overflow: hidden;
+    position: relative;
+    
+  }
+  
+  .marquee div {
+    display: block;
+    
+    width: 250%;
+
+  
+    position: absolute;
+    bottom: .9rem;
+  
+    animation: marquee 10s linear infinite;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    @include mv(){
+        animation: marquee 10s linear infinite;
+        width: 500%;
+        overflow: hidden;
+    }
+
+}
+  
+  .marquee span {
+
+    margin-right: 1rem;
+    width: calc(100%/5);
+    height: auto;
+    display: flex;
+    align-items: center;
+    font-size: 70% ;
+    font-family: 'Work Sans', sans-serif;
+
+    @include mv(){
+        width: 100%;
+        height: auto;
+    }
+
+  }
+  
+  @keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+  }

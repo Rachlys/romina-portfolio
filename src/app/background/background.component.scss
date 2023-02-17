@@ -1,0 +1,262 @@
+@function random_range($min , $max) {
+    $rand : random();
+    $random_range : $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+}
+
+@mixin mv( $medida : 768px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+
+.cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @include mv{
+        height: 240%;
+    }
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    background-color: var(--pink);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 90px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation-direction: reverse;
+
+}
+
+.circles li:nth-child(2){
+    background-color: var(--blue);
+    left: #{random_range(0% , 100%)};
+    width: 15rem;
+    height: 15rem;
+    animation-delay: #{random_range(0 , 5)}s;
+    animation-duration:  #{random_range(10 , 30)}s;
+    clip-path: circle(50% at 50% 50%);
+    
+}
+
+.circles li:nth-child(3){
+    background-color: var(--red);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 90px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: circle(50% at 50% 50%);
+    animation-direction: reverse;
+
+}
+
+.circles li:nth-child(4){
+    background-color: var(--yellow);
+    left: #{random_range(0% , 100%)};
+    width: 15rem;
+    height: 15rem;
+    animation-delay:#{random_range(0 , 8)}s;
+    animation-duration:#{random_range(10 , 30)}s;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.circles li:nth-child(5){
+    background-color: var(--green);
+    left: #{random_range(1% , 100%)};
+    width: 90px;
+    height: 90px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: circle(50% at 50% 50%);
+    animation-direction: reverse;
+
+}
+.circles li:nth-child(6){
+    background-color: var(--pink);
+    left: #{random_range(1% , 100%)};
+    width: 90px;
+    height: 90px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: circle(50% at 50% 50%);
+    
+}
+
+.circles li:nth-child(7){
+    background-color: var(--violet);
+    left: #{random_range(1% , 100%)};
+    width: 90px;
+    height: 90px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: circle(50% at 50% 50%);
+    animation-direction: reverse;
+
+}
+
+.circles li:nth-child(8){
+    background-color: var(--blue);
+    left: #{random_range(0% , 100%)};
+    width: 80px;
+    height: 80px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.circles li:nth-child(9){
+    background-color: var(--red);
+    left: #{random_range(0% , 100%)};
+    width: 80px;
+    height: 80px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation-direction: reverse;
+
+}
+
+
+.circles li:nth-child(10){
+    background-color: var(--yellow);
+    left: #{random_range(0% , 100%)};
+    width: 80px;
+    height: 80px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.circles li:nth-child(11){
+    background-color: var(--green);
+    left: #{random_range(0% , 100%)};
+    width: 80px;
+    height: 80px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation-direction: reverse;
+
+}
+
+
+.circles li:nth-child(11){
+    background-color: var(--violet);
+    left: #{random_range(0% , 100%)};
+    width: 80px;
+    height: 80px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.circles li:nth-child(12){
+    background-color: var(--blue);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 40px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    animation-direction: reverse;
+
+}
+
+
+.circles li:nth-child(13){
+    background-color: var(--red);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 40px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+}
+.circles li:nth-child(14){
+    background-color: var(--yellow);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 40px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    animation-direction: reverse;
+
+}
+
+.circles li:nth-child(15){
+    background-color: var(--green);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 40px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+}
+
+.circles li:nth-child(16){
+    background-color: var(--green);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 40px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    animation-direction: reverse;
+
+}
+.circles li:nth-child(17){
+    background-color: var(--pink);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 40px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+}
+.circles li:nth-child(18){
+    background-color: var(--violet);
+    left: #{random_range(0% , 100%)};
+    width: 90px;
+    height: 40px;
+    animation-delay: #{random_range(0 , 8)}s;
+    animation-duration: #{random_range(10 , 30)}s;
+    animation-direction: reverse;
+}
+
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100%{
+        transform: translateY(-300vh) rotate(720deg);
+    }
+
+}
+

@@ -18,7 +18,7 @@ export class WindowComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.mathRandom(3,0)
+    this.mathRandom(5,0)
   }
 
 
@@ -29,13 +29,17 @@ export class WindowComponent implements OnInit {
 
   getRandomColor() : string{
     if( this.number_random === 0){
-      return '#DD6062'
-    }else if(this.number_random === 1){
       return '#357EA5'
+    }else if(this.number_random === 1){
+      return '#DD6062'
     }else if(this.number_random === 2 ){
       return '#DDB52A'
-    }else{
+    }else if( this.number_random === 3){
       return '#5EB092'
+    }else if( this.number_random === 4 ){
+      return '#E484A8'
+    }else{
+      return '#9092B8'
     }
     
 }

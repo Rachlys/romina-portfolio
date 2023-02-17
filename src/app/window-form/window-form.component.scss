@@ -1,0 +1,172 @@
+@mixin mv( $medida : 768px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+article{
+    background-color: var(--green);
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--negro);
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+
+}
+
+header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.5em;
+    width: 100%;
+}
+
+h1{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: larger;
+    display: block;
+}
+
+.buttons{
+    width: 5em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: .5em;
+
+    .red{
+        background-color: var(--red);
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 1px solid var(--negro);
+    }
+
+    .yellow{
+        background-color: var(--yellow);
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 1px solid var(--negro);
+    }
+
+    .green{
+        background-color: var(--green);
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 1px solid var(--negro);
+    }
+
+}
+
+form{
+    height:100%;
+    background-color: var(--white_cream);
+    border-radius: 10px;
+    border: 1px solid var(--negro);
+    padding: 3rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    
+    @include mv{
+        padding: 2rem 1rem;
+    }
+}
+
+label{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.number{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    padding: .1rem .5rem;
+    border: 1px solid var(--negro);
+    border-radius: 10px;
+
+    &.green{
+        background-color: var(--green);
+    }
+
+    &.pink{
+        background-color: var(--pink);
+    }
+    &.yellow{
+        background-color: var(--yellow);
+    }
+    &.violet{
+        background-color: var(--violet);
+    }
+
+
+}
+
+p{
+    font-family: 'Noto Serif Toto', serif;
+    font-weight: 500;
+
+}
+
+input{
+    border-bottom: 1px solid var(--negro);
+    margin: 0 0 0 3rem;
+    width: 80%;
+    padding: .3rem 0;
+    @include mv{
+        width: 75%;
+    }
+   
+}
+input:focus{
+    outline: none;
+}
+
+button{
+    width: 15rem;
+    background-color: var(--violet);
+    border: 1px solid var(--negro);
+    border-radius: 10px;
+    padding: .2rem 1rem;
+    margin: 0 0 0 10%;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    h1{
+        font-size: smaller;
+    }
+}
+
+.section{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+.svg_cont{
+    height: 1.5rem;
+    width: 1.5rem;
+
+    svg{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        color: var(--negro);
+    }
+}

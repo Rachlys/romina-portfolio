@@ -1,9 +1,12 @@
 
-<button (click)="inicio()"> < </button>
+<button (click)="inicio()" [ngStyle]="{'opacity' : show_button() }"><i class="fa-solid fa-arrow-left"></i> </button>
 
 
 <main>
     <div class="main_move" [ngStyle]="{'transform' : translate()}" >
+
+
+        <app-background></app-background>
 
         <div class="home">
             
@@ -45,13 +48,30 @@
         </div>
     
         <div class="proyectos">
+
             <app-window class="proyectos__first" [info]="info_proyectos[0]"></app-window>
-            <app-window class="proyectos__second" [info]="info_proyectos[1]"></app-window>
+            
+            <div class="row">
+                <app-window class="proyectos__second" [info]="info_proyectos[1]"></app-window>
+                <app-window class="proyectos__third" [info]="info_proyectos[2]"></app-window>
+
+            </div>
 
         </div>
     
-        <div class="home">
-            
+        <div class="contact_me">
+            <div class="column">
+                <app-window class="contact_me__section"[info]="info_contact_me[0]"></app-window>
+                <app-window class="contact_me__section" [info]="info_contact_me[1]"></app-window>
+            </div>
+            <div class="column">
+                <app-window-form></app-window-form>
+            </div>
+            <div class="column">
+                <app-window class="contact_me__section" [info]="info_contact_me[2]"></app-window>
+                <app-window class="contact_me__section" [info]="info_contact_me[3]"></app-window>
+
+            </div>
         </div>
 
 
@@ -59,82 +79,23 @@
     
 </main>
 
-<!-- <main>
+<footer>
 
-    <div class="home" [ngStyle]="{'transform' : translate() }">
-        
-        <section class="home__section inicio">
-
-            <div class="section__title">
-                <app-about-me></app-about-me>
-            </div>
-
-            <div class="section__nav">
-
-                <div class="nav about_me" (click)="sobremi()"> 
-
-                    <div class="nav__hover"></div>
-
-
-                    <div class="title__decoration"> 
-                        <div class="title__dot green"></div>
-                        <div class="title__dot yellow"></div>
-                        <div class="title__dot red"></div>
-                    </div>
-
-
-                        <p> Sobre mi </p>
-
-                
-                
-                </div>
-
-                <div class="nav proyectos" (click)="proyectos()"> 
-    
-                    <div class="nav__hover"></div>
-
-                    <div class="title__decoration"> 
-                        <div class="title__dot green"></div>
-                        <div class="title__dot yellow"></div>
-                        <div class="title__dot red"></div>
-                    </div>
-            
-                    <p> Proyectos </p>
-            
-                </div>
-
-
-                <div class="nav contacto" (click)="contacto()"> 
-    
-                    <div class="nav__hover"></div>
-
-                    <div class="title__decoration"> 
-                        <div class="title__dot green"></div>
-                        <div class="title__dot yellow"></div>
-                        <div class="title__dot red"></div>
-                    </div>
-            
-                    <p> Contacto </p>
-            
-                </div>            
-            </div>
-
-        </section>
-        
-        <section class="home__section">
-            <app-sobre-mi></app-sobre-mi>
-        </section>
-
-        <section class="home__section">
-            <app-contact-me></app-contact-me>
-        </section>
-
-        <section class="home__section">
-            <app-contact-me></app-contact-me>
-        </section>
-
+    <div class="thank_you" *ngIf="show_thank">
+        <p *ngIf="show_thank" > Muchísimas gracias por visitarme!</p>
     </div>
 
-</main> -->
+    <div class="inicio" (click)="show()"></div>
 
+    <div class="marquee">
+        <div>
+          <span>MADE WITH LOVE BY ROMINA </span>
+          <span>MADE WITH LOVE BY ROMINA </span>
+          <span>MADE WITH LOVE BY ROMINA </span>
+          <span>MADE WITH LOVE BY ROMINA </span>
+          <span>MADE WITH LOVE BY ROMINA </span>
 
+        </div>
+    </div>
+
+</footer>

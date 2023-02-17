@@ -17,10 +17,10 @@ article{
     align-content: center;
 
 
-    background-image: linear-gradient(to left,  transparent, transparent 50%, var(--negro) 50%, var(--negro), );
+    background-image: linear-gradient(to top,  transparent, transparent 50%, var(--negro) 50%, var(--negro), );
     background-position: 100% 100%;
-    background-size: 200% 100%;
-    transition: all .25s ease-in;
+    background-size: 200% 250%;
+    transition: all .30s ease-in;
 
 }
 
