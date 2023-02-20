@@ -1,0 +1,79 @@
+@mixin mv( $medida : 785px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+
+
+main{
+    height: auto;
+    width: 100%;
+    background-color: var(--white_cream);
+    padding: 2rem;
+
+    border-radius: 10px;
+    border: 1px solid var(--negro);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 1rem;
+    
+    @include mv{
+        overflow: scroll;
+        height: 10rem;
+        padding: 1rem;
+        
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+}
+
+.logo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+
+    @include mv{
+        width: 90%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+}
+
+.logo__img{
+    padding: .3rem;
+    width: 5rem;
+    height: 6rem;
+    object-fit: contain;
+
+    @include mv{
+        width: 3rem;
+        height: 4rem;
+    }
+}
+
+.logo__title{
+    font-size: 90%;
+
+    &.hover:hover{
+        background-color: var(--negro);
+        color: var(--white_cream);
+    }
+
+    @include mv{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}

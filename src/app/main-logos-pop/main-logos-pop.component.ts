@@ -1,27 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-window',
-  templateUrl: './window.component.html',
-  styleUrls: ['./window.component.scss']
+  selector: 'app-main-logos-pop',
+  templateUrl: './main-logos-pop.component.html',
+  styleUrls: ['./main-logos-pop.component.scss']
 })
-export class WindowComponent implements OnInit {
+export class MainLogosPopComponent implements OnInit {
 
   @Input() info : any
-  @Input() titulo : any
-
-  number_random : number = 0
-  position : number = 3
   position_form : number = 5
-  position_proyecto : number = 0
-  open_close : boolean = true
+  number_random : number = 0
+
 
   constructor() { }
 
   ngOnInit(): void {
-    this.mathRandom(5,0)
   }
 
+  changePositionForm( nuevoValor : number){
+    this.position_form = nuevoValor
+  }
 
   mathRandom(max : number , min : number) : void{
     let number = Math.round(Math.random() * (max - min) + min);
@@ -43,25 +41,6 @@ export class WindowComponent implements OnInit {
       return '#9092B8'
     }
     
-}
-
-open() : void{
-  this.open_close = !this.open_close
-}
-
-
-changePosition( nuevoValor : number ) {
-  this.position = nuevoValor
-}
-
-changePositionForm( nuevoValor : number){
-  this.position_form = nuevoValor
-}
-
-
-changePositionProyect( nuevoValor : number){
-  this.position_proyecto = nuevoValor
-  console.log(this.position_proyecto)
 }
 
 }

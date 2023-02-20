@@ -1,0 +1,10 @@
+<main>
+    <div class="logo" *ngFor=" let cadaLogo of info; let i = index">
+
+        <app-pop-up [titulo]="cadaLogo.title_svg" [descripcion]="cadaLogo.descripcion" *ngIf=" position_form === i" ></app-pop-up>
+
+        <div class="logo__icon" (click)="changePositionForm(i)" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
+        <p class="logo__title" (click)="changePositionForm(i)"> {{cadaLogo.title_svg}} </p>
+    </div>
+
+</main>

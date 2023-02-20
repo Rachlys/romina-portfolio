@@ -1,0 +1,14 @@
+    <main>
+        <article class="lightbox__titles">
+                <div class="lightbox__title" *ngFor=" let cadaExp of info.logos_info; let i = index">            
+                    <span class="lightbox__icon"><i class="fa-solid fa-file"></i></span>
+                    <div class="lightbox__p" (click)="changePositionProyect(i)"> <p>{{cadaExp.title_svg}}</p> </div>
+                </div>
+        </article>
+
+        <article class="lightbox__img">
+                <img *ngFor="let imagen of info.logos_info; let i = index" [src]="imagen.imagen" alt="" [ngStyle]="{'opacity' : position_proyecto === i ? 1 : 0}">
+        </article>
+
+        
+    </main>

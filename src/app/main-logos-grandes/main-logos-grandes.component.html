@@ -1,0 +1,11 @@
+<main>
+    <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index" >
+    
+        <a [href]="cadaLogo.href">
+            <div class="logo__icon" *ngIf=" cadaLogo.i"><i ngClass="{{ cadaLogo.i}}" ></i> </div>
+            <div class="logo__title"> <p>{{cadaLogo.title_svg}}</p> </div>
+        </a>
+
+    </div>
+
+</main>

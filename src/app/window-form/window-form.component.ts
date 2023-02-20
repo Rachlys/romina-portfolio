@@ -11,7 +11,22 @@ export class WindowFormComponent implements OnInit {
 
   number_random : number = 0
   open_close : boolean = true
-  
+  nombre_validacion : boolean = false
+  email_validacion : boolean = false
+  servicio_validacion : boolean = false
+  proyect_validacion : boolean = false
+
+
+  submit : boolean = false
+  nombre : string = ''
+  email : string = ''
+  servicio : string = ''
+  proyect : string = ''
+
+  patron1 : any = /[\d]/
+  patron2 : any = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+
   constructor(
     private builder : FormBuilder,
   ) { }
@@ -48,5 +63,56 @@ export class WindowFormComponent implements OnInit {
     }
     
   }
+
+  check_name() : void{
+      console.log(this.nombre)
+      this.nombre = this.nombre.trim()
+      
+      if(!this.patron1.test(this.nombre) && this.nombre.length >= 3){
+          this.nombre_validacion = true
+          console.log(this.nombre_validacion)
+      }else{
+          this.nombre_validacion = false
+          console.log(this.nombre_validacion)
+
+      }
+      
+    }
+
+    check_email() : void{
+      console.log(this.email)
+      this.email = this.email.trim()
+      
+      if(!this.patron2.test(this.email) && this.email.length >= 0){
+          this.email_validacion = false
+          console.log(this.email_validacion)
+      }else{
+          this.email_validacion = true
+          console.log(this.email_validacion)
+      }
+      
+    }
+
+    check_servicio() : void{
+      console.log(this.servicio)
+
+      if(this.servicio.length > 10){
+        this.servicio_validacion = true
+      }else{
+        this.servicio_validacion = false
+      }
+    }
+
+
+    check_submit() : string{
+      if(this.nombre_validacion && this.email_validacion && this.servicio_validacion){
+          return 'activo'
+      }else{
+        return ''
+      }
+    }
+
+
+
 
 }

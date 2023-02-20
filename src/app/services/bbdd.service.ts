@@ -14,8 +14,8 @@ export class BbddService {
     },
 
     {
-      dato : 'logos_form',
-      titulo : 'FORMACION',
+      dato : 'logos_pop',
+      titulo : 'FORMACIÓN',
       logos_info : [
         {
           i : 'fa-solid fa-palette',
@@ -37,7 +37,7 @@ export class BbddService {
 
         {
           i : 'fa-solid fa-laptop-code',
-          title_svg : 'MÁSTER WEB DEV FULL STACK - TRAZOS',
+          title_svg : 'MÁSTER WEB DEV FULLSTACK - TRAZOS',
           descripcion: 'Realicé un Máster de Web Developer Full Stack por la Escuela de Trazos. Es un máster centrado en la enseñanza desde lo más principal como el lenguaje de marcado como HTML5 y CSS3 hasta diferentes lenguajes como Javascript, PHP y diferentes frameworks como Angular, React JS y nociones de Laravel. También obtuve formación en lenguajes relacionados con base de datos como PHP junto con MYSQL además de otras tecnologías como Node JS y mongoDB. Debido al uso de estas tecnologías se utilizaron otros programas relacionados como Postman, Visual Studio Code, Mamp, Github y Sourcetree. '
         },
 
@@ -56,7 +56,7 @@ export class BbddService {
 
     {
       dato : 'logos',
-      titulo : 'TECNOLOGIAS',
+      titulo : 'TECNOLOGÍAS',
       logos_info : [
 
         {
@@ -142,7 +142,7 @@ export class BbddService {
 
 
         {
-          dato : 'lista',
+          dato : 'lista_pop',
           titulo : 'EXPERIENCIAS',
           logos_info : [
     
@@ -168,8 +168,8 @@ export class BbddService {
 
   proyectos : Array<any> = [
     {
-      dato : 'lista',
-      titulo : 'PROYECTOS GRAFICOS',
+      dato : 'lightbox',
+      titulo : 'PROYECTOS GRÁFICOS',
       logos_info :  [
         {
           title_svg : 'BRANDING NATUMY',
@@ -215,7 +215,7 @@ export class BbddService {
       ]
     },
     {
-      dato : 'logos_web',
+      dato : 'logos_grandes',
       titulo : 'PROYECTOS WEB',
       logos_info : [
         {
@@ -236,7 +236,7 @@ export class BbddService {
       ]
     },
     {
-      dato : 'logos_port',
+      dato : 'logos_grandes',
       titulo : 'REDES DESARROLLO',
       logos_info : [
         {
@@ -266,14 +266,14 @@ export class BbddService {
       titulo : 'CURRICULUM VITAE',
       logos_info :  [
         {
-          title_svg : 'CURRICULUM VITAE',
+          title_svg : 'CURRICULUM_ROMINA.pdf',
           
           href : '/assets/CV_ROMINA_YUPANQUI_REYNOSO_2021.pdf'
         },
       ]
     },
     {
-      dato : 'logos_web',
+      dato : 'logo_unico',
       titulo : 'LINKEDIN',
       logos_info : [
         {
@@ -283,12 +283,12 @@ export class BbddService {
       ]
     },
     {      
-      dato : 'logos_web',
+      dato : 'logo_unico',
       titulo : 'EMAIL',
       logos_info : [
         {
           i : 'fa-solid fa-envelope',
-          href: 'romiyup@hotmail.com'
+          href: 'mailto:romiyup@hotmail.com'
         }
       ]
     },

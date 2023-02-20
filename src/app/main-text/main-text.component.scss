@@ -1,0 +1,19 @@
+@mixin mv( $medida : 785px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+.texto{
+    height:100%;
+    background-color: var(--white_cream);
+    border-radius: 10px;
+    border: 1px solid var(--negro);
+    padding: 1.5rem;
+    text-align: justify;
+
+    @include mv{
+        height: 10rem;
+        overflow: scroll;
+    }
+}

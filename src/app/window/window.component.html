@@ -5,175 +5,28 @@
 
         <div class="buttons">
             <span class="red"></span>
-            <span class="yellow" (click)="open()"></span>
+            <span class="yellow hover" (click)="open()"></span>
             <span class="green"></span>
         </div>
     </header>
 
-    <main class="texto" *ngIf=" info.dato === 'texto'" [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-        <p>{{ info.descripcion}}</p> 
-    </main>
 
+    <app-main-text *ngIf="info.dato === 'texto'" [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" [p]="info.descripcion"></app-main-text>
 
-    <main class="imagen" *ngIf=" info.dato === 'imagen' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-    </main> 
+    <app-main-imagen *ngIf=" info.dato === 'imagen' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}"></app-main-imagen>
 
+    <app-main-logos-pop [info]="info.logos_info" *ngIf="info.dato === 'logos_pop' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" ></app-main-logos-pop>
+
+    <app-main-logos [info]="info"  *ngIf="info.dato === 'logos' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" ></app-main-logos>
+
+    <app-main-lista-pop [info]="info" *ngIf=" info.dato == 'lista_pop' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" ></app-main-lista-pop>
     
-    <main class="logos_tecnologia" *ngIf="info.titulo === 'TECNOLOGIAS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
+   <app-main-lista [info]="info" *ngIf=" info.dato=== 'lista' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" ></app-main-lista> 
 
-        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
+   <app-main-lightbox [info]="info" *ngIf="info.dato=== 'lightbox' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}"></app-main-lightbox>
+    
+   <app-main-logos-grandes [info]="info"  *ngIf="info.dato=== 'logos_grandes' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" ></app-main-logos-grandes>
 
-            <div class="logo_i" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
-            <img [src]="cadaLogo.svg" alt="" *ngIf=" cadaLogo.svg">
-            <div class="logo_name"> {{cadaLogo.title_svg}} </div>
-
-        </div>
-
-    </main>
-
-    <main class="logos_otros_programas" *ngIf="info.titulo === 'OTROS PROGRAMAS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-
-        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
-
-            <div class="logo_i" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
-            <img [src]="cadaLogo.svg" alt="" *ngIf=" cadaLogo.svg">
-            
-            <div class="logo_name"> {{cadaLogo.title_svg}} </div>
-        </div>
-
-    </main>
-
-    <main class="logos_form" *ngIf="info.titulo === 'FORMACION' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-
-        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
-
-            <article class="pop_up__form" *ngIf=" position_form === i" [ngStyle]="{'background-color' : getRandomColor() }">
-
-                <header>
-                    <h1 class="pop_up">{{cadaLogo.title_svg}}</h1>
-
-                    <div class="buttons">
-                        <span class="red" (click)="changePositionForm(5)" ></span>
-                        <span class="yellow"></span>
-                        <span class="green"></span>
-                    </div>
-                </header>
-
-
-                <main class="main_pop_up">
-                {{cadaLogo.descripcion}}
-                </main>
-
-            </article>
-
-            <div class="logo_i clicked" (click)="changePositionForm(i)" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
-            <div class="logo_name clicked" (click)="changePositionForm(i)"> {{cadaLogo.title_svg}} </div>
-        </div>
-
-    </main>
-
-
-    <main class="lista" *ngIf=" info.titulo=== 'EXPERIENCIAS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-        
-        <ul>
-            <li *ngFor=" let cadaExp of info.logos_info; let i = index">            
-                
-                
-            <article class="pop_up__form pop_lista" *ngIf=" position === i" [ngStyle]="{'background-color' : getRandomColor() }">
-
-                <header>
-                    <h1 class="pop_up">{{cadaExp.title_svg}}</h1>
-
-                    <div class="buttons pop_up">
-                        <span class="red" (click)="changePosition(3)" ></span>
-                        <span class="yellow"></span>
-                        <span class="green"></span>
-                    </div>
-                </header>
-
-
-                <main class="main_pop_up">
-                {{cadaExp.descripcion}}
-                </main>
-
-            </article>
-
-                <span ><i class="fa-solid fa-file"></i></span>
-                <div class="title" (click)="changePosition(i)"> {{cadaExp.title_svg}} </div>
-
-            </li>
-        </ul>
-    </main>
-
-    <main class="lista" *ngIf=" info.titulo=== 'CURRICULUM VITAE' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-        
-        <ul>
-            <li *ngFor=" let cadaExp of info.logos_info; let i = index">            
-                <span ><i class="fa-solid fa-file"></i></span>
-                <a *ngIf=" cadaExp.href" [href]="cadaExp.href" target="_blank">
-                    <div class="title"> {{cadaExp.title_svg}} </div>
-                </a>
-
-            </li>
-        </ul>
-    </main>
-
-
-    <div class="contenedor_proyectos" *ngIf="info.titulo=== 'PROYECTOS GRAFICOS' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-        
-        <main class="lista_comp">
-            <ul>
-                <li *ngFor=" let cadaExp of info.logos_info; let i = index">            
-                    <span ><i class="fa-solid fa-file"></i></span>
-                    <div class="title" (click)="changePositionProyect(i)"> {{cadaExp.title_svg}} </div>
-                </li>
-            </ul>
-        </main>
-
-        <main class="imagenes">
-                <img *ngFor="let imagen of info.logos_info; let i = index" [src]="imagen.imagen" alt="" [ngStyle]="{'opacity' : position_proyecto === i ? 1 : 0}">
-        </main>
-
-        
-    </div>
-
-
-    <main class="logos_proyectos" *ngIf="info.titulo=== 'PROYECTOS WEB' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-
-        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
-            <a class="logo_a" [href]="cadaLogo.href" target="_blank">
-                <div class="logo_i clicked" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
-                <div class="logo_name clicked" > {{cadaLogo.title_svg}} </div>
-            </a> 
-        </div>
-
-    </main>
-
-    <main class="logos_proyectos" *ngIf="info.titulo=== 'REDES DESARROLLO' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-
-        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index"> 
-            <a class="logo_a" [href]="cadaLogo.href" target="_blank">
-                <div class="logo_i clicked" *ngIf="cadaLogo.i" ><i ngClass="{{ cadaLogo.i}}" ></i> </div>
-                <div class="logo_name clicked" >{{cadaLogo.title_svg}}</div>
-            </a> 
-        </div>
-
-    </main>
-
-    <main class="logos_redes" *ngIf="info.titulo=== 'LINKEDIN' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-
-        <div class="logo" *ngFor=" let cadaLogo of info.logos_info; let i = index">
-            <div class="logo_i " *ngIf="cadaLogo.i" > <a [href]="cadaLogo.href" target="_blank"> <i ngClass="{{ cadaLogo.i}}" ></i>  </a> </div>
-        </div>
-
-    </main>
-
-    <main class="logos_redes" *ngIf="info.titulo=== 'EMAIL' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}">
-
-        <div class="logo clicked" *ngFor=" let cadaLogo of info.logos_info; let i = index">
-            <div class="logo_i clicked" *ngIf="cadaLogo.i"> <a href="mailto:romiyup@hotmail.com" target="_blank" ><i ngClass="{{ cadaLogo.i}}" ></i></a>  </div>
-        </div>
-
-    </main>
+   <app-main-logo-unico [info]="info" *ngIf="info.dato=== 'logo_unico' "   [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}"  ></app-main-logo-unico>
 
 </article>

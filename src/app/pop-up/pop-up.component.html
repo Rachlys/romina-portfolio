@@ -1,11 +1,12 @@
 
-<article  [ngStyle]="{'background-color' : getRandomColor() }">
+<article [ngStyle]="{'background-color' : getRandomColor(), 'display' :  close() }" 
+         [ngClass]="{'up' : tipo === 'EXPERIENCIAS'}">
 
     <header>
         <h1>{{titulo}}</h1>
 
         <div class="buttons">
-            <span class="red" ></span>
+            <span class="red" (click)="button_close()" ></span>
             <span class="yellow"></span>
             <span class="green"></span>
         </div>
@@ -13,7 +14,7 @@
 
 
     <main>
-       {{descripcion}}
+       <p>{{descripcion}}</p>
     </main>
 
 </article>

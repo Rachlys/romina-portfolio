@@ -10,9 +10,6 @@
   --pink          : #E484A8;
   --violet        : #9092B8;
   
-  /* Tipografía */
-  --tipo-principal   : 'Noto Serif Toto', serif;
-  --tipo-secundaria  : 'Noto Serif Toto', serif;;
 }
   
 /* (Opcional) Las adaptamos al modo oscuro */
@@ -78,7 +75,7 @@ html {
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
 h1 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
-  font-family: 'Noto Serif Toto', serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: inherit;
   font-weight: inherit;
   font-style: inherit;
@@ -90,6 +87,7 @@ h2{
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
 }
+
 /* Evitamos problemas con los pseudoelementos de quotes */
 // blockquote:before, blockquote:after, q:before, q:after {
 // 	content: '';
@@ -130,5 +128,3 @@ body {
   // /* (Opcional) */ -moz-osx-font-smoothing: grayscale;
 }
 
-body { 
-  margin: 0; font-family: 'Noto Serif Toto', serif }

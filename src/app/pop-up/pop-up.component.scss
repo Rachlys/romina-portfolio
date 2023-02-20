@@ -1,16 +1,41 @@
-article{
-    position: fixed;
-    top: 40%;
-    margin: 0 0 0 35em;    
-    z-index: 1;
-    height: 20em;
-    display: flex;
-    width: 40em;
-    border-radius: 10px;
-    border: 1px solid var(--negro);
+@mixin mv( $medida : 768px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
 
+
+article{
+    position: absolute;
+    top: 15rem;
+    left: 0;
+    z-index: 1;
+    width: 40rem;
+    border-radius: 10px;
+
+    border: 1px solid var(--negro);
+    
+    display: flex;
     flex-flow: column nowrap;
     padding: 1rem 1.2rem;
+
+    @include mv(){
+        width: 90svw;
+        top: -5rem;
+        left: -1rem ;
+    }
+    
+}
+
+.up{
+    top: -25rem;
+    left: -40rem;
+    
+    @include mv(){
+        width: 90svw;
+        top: -25rem;
+        left: -1rem ;
+    }
 }
 
 header{
@@ -20,6 +45,17 @@ header{
     align-items: center;
     height: 1.5em;
     width: 100%;
+
+    @include mv(){
+        height: auto;
+
+    }
+
+    h1{
+        @include mv(){
+            font-size: 80%;
+        }
+    }
 }
 
 
@@ -30,37 +66,51 @@ main{
     border: 1px solid var(--negro);
     padding: 1rem;
     margin: .5rem 0 0 0;
+
+    @include mv(){
+        height: 100%;
+    }
+
 }
 
-.buttons__pop_up{
-    width: 5em;
 
+
+.buttons{
+    width: 5rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
     gap: .5em;
 
+
     .red{
         background-color: var(--red);
-        width: 15px;
-        height: 15px;
+        width: 1rem;
+        height: 1rem;
         border-radius: 100%;
         border: 1px solid var(--negro);
+        cursor: pointer;
+
+        &:hover{
+            background-color: var(--negro);
+        }
     }
 
     .yellow{
         background-color: var(--yellow);
-        width: 15px;
-        height: 15px;
+        width: 1rem;
+        height: 1rem;
         border-radius: 100%;
         border: 1px solid var(--negro);
+
+
     }
 
     .green{
         background-color: var(--green);
-        width: 15px;
-        height: 15px;
+        width: 1rem;
+        height: 1rem;
         border-radius: 100%;
         border: 1px solid var(--negro);
     }

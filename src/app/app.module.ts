@@ -19,6 +19,15 @@ import { WindowFormComponent } from './window-form/window-form.component';
 import { HoraComponent } from './hora/hora.component';
 import { EmailService } from './email.service';
 import { BackgroundComponent } from './background/background.component';
+import { MainTextComponent } from './main-text/main-text.component';
+import { MainImagenComponent } from './main-imagen/main-imagen.component';
+import { MainLogosPopComponent } from './main-logos-pop/main-logos-pop.component';
+import { MainLogosComponent } from './main-logos/main-logos.component';
+import { MainListaPopComponent } from './main-lista-pop/main-lista-pop.component';
+import { MainListaComponent } from './main-lista/main-lista.component';
+import { MainLightboxComponent } from './main-lightbox/main-lightbox.component';
+import { MainLogosGrandesComponent } from './main-logos-grandes/main-logos-grandes.component';
+import { MainLogoUnicoComponent } from './main-logo-unico/main-logo-unico.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +44,15 @@ import { BackgroundComponent } from './background/background.component';
     WindowFormComponent,
     HoraComponent,
     BackgroundComponent,
+    MainTextComponent,
+    MainImagenComponent,
+    MainLogosPopComponent,
+    MainLogosComponent,
+    MainListaPopComponent,
+    MainListaComponent,
+    MainLightboxComponent,
+    MainLogosGrandesComponent,
+    MainLogoUnicoComponent,
   ],
   imports: [
     BrowserModule,

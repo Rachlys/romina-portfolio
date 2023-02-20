@@ -1,0 +1,52 @@
+@mixin mv( $medida : 785px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+
+main{
+    width: 100%;
+    background-color: var(--white_cream);
+    border-radius: 10px;
+    border: 1px solid var(--negro);
+    padding: 1rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+
+    position: relative;
+
+
+    
+}
+
+.exp{
+    width: 100%;
+    margin: 0 0 .4rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+
+.exp__icon{
+    width: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.exp__title{
+    font-size: 90%;
+    cursor: pointer;
+    &:hover{
+        background-color: var(--negro);
+        color: var(--white_cream);
+    }
+
+    @include mv(){
+        width: 90%;
+        font-size: 80%;
+    }
+
+}

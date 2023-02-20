@@ -9,19 +9,22 @@ export class PopUpComponent implements OnInit {
 
   @Input() titulo : any
   @Input() descripcion : any
+  @Input() tipo : any
+
+  show : boolean = true
   number_random : number = 0
 
   constructor() { }
 
   ngOnInit(): void {
     this.mathRandom(3,0)
-
   }
 
   mathRandom(max : number , min : number) : void{
     let number = Math.round(Math.random() * (max - min) + min);
     this.number_random = number
   }
+
 
   getRandomColor() : string{
     if( this.number_random === 0){
@@ -34,6 +37,18 @@ export class PopUpComponent implements OnInit {
       return '#5EB092'
     }
     
-} 
+  } 
+
+  button_close() : void{
+    this.show = false
+  }
+  
+  close() : string{
+    if(!this.show){
+      return 'none'
+    }else{
+      return 'flex'
+    }
+  }
 
 }

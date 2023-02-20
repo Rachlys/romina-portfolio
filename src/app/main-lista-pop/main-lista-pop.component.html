@@ -1,0 +1,12 @@
+<main>
+
+    <div class="exp" *ngFor=" let cadaExp of info.logos_info; let i = index">
+
+        <app-pop-up class="exp__popup" *ngIf="position === i" [tipo]="info.titulo" [titulo]="cadaExp.title_svg" [descripcion]="cadaExp.descripcion"></app-pop-up>
+
+        <span class="exp__icon"><i class="fa-solid fa-file"></i></span>
+        <div class="exp__title" (click)="changePosition(i)"> <p>{{cadaExp.title_svg}}</p> </div>
+        
+    </div>
+
+</main>

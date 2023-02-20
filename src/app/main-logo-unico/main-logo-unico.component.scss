@@ -1,0 +1,27 @@
+@mixin mv( $medida : 785px){
+    @media screen and (max-width: $medida) {
+        @content
+    }
+}
+
+
+
+main{
+    height: auto;
+    width: 100%;
+    background-color: var(--white_cream);
+    padding: 0 0 0 1rem;
+
+    border-radius: 10px;
+    border: 1px solid var(--negro);
+}
+
+.logo, a {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo__icon{
+    font-size: 500%;
+}

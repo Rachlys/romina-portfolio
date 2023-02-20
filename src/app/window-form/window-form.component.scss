@@ -116,17 +116,13 @@ label{
 
 }
 
-p{
-    font-family: 'Noto Serif Toto', serif;
-    font-weight: 500;
-
-}
-
 input{
     border-bottom: 1px solid var(--negro);
     margin: 0 0 0 3rem;
     width: 80%;
     padding: .3rem 0;
+    font-family: 'Noto Sans', sans-serif;
+
     @include mv{
         width: 75%;
     }
@@ -138,7 +134,8 @@ input:focus{
 
 button{
     width: 15rem;
-    background-color: var(--violet);
+    background-color: var(--negro);
+    color: var(--white_cream);
     border: 1px solid var(--negro);
     border-radius: 10px;
     padding: .2rem 1rem;
@@ -149,10 +146,20 @@ button{
     justify-content: space-between;
     align-items: center;
 
+    pointer-events: none;
+
     h1{
         font-size: smaller;
     }
 }
+
+.activo{
+    pointer-events: all;
+    background-color: var(--violet);
+    color: var(--negro);
+    cursor: pointer;
+}
+
 
 .section{
     display: flex;
