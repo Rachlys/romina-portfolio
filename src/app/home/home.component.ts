@@ -8,11 +8,7 @@ import { BbddService } from '../services/bbdd.service';
 })
 export class HomeComponent implements OnInit {
 
-  info_sobre_mi : Array<any> = []
-  info_proyectos : Array<any> = []
-  info_contact_me : Array<any> = []
   show_back : boolean = false
-  show_thank : boolean = false
 
   numTranslate : number = 0
   defaultTouch = { x: 0, y: 0, time: 0 };
@@ -21,11 +17,7 @@ export class HomeComponent implements OnInit {
 
 
   constructor(
-    private bbddService : BbddService
   ) { 
-    this.info_sobre_mi = bbddService.sobre_mi
-    this.info_proyectos = bbddService.proyectos
-    this.info_contact_me = bbddService.contact_me
   }
 
   ngOnInit(): void {
@@ -82,11 +74,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  show() : void{
-    this.show_thank = !this.show_thank
-    console.log(this.show_thank)
 
-  }
 
   translate() : string{
     return `translate(${this.numTranslate}vw)`

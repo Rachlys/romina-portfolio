@@ -1,8 +1,4 @@
-@mixin mv( $medida : 785px){
-    @media screen and (max-width: $medida) {
-        @content
-    }
-}
+@import '/src/app/mixins.scss';
 
 article{
     background-color: var(--green);

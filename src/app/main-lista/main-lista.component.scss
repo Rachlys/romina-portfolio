@@ -1,9 +1,4 @@
-@mixin mv( $medida : 785px){
-    @media screen and (max-width: $medida) {
-        @content
-    }
-}
-
+@import '/src/app/mixins.scss';
 
 main{
     width: 100%;
@@ -18,25 +13,25 @@ main{
     
 }
 
-.exp{
+.lista{
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
 
 }
 
-.exp__a{
+.lista__a{
     width: 100%;
     margin: 0 0 .3rem 0;
     display: flex;
     flex-flow: row nowrap;
 
 }
-.exp__icon{
+.lista__icon{
     width: 2rem;
 }
 
-.exp__title{
+.lista__title{
     font-size: 90%;
     cursor: pointer;
     &:hover{

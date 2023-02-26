@@ -12,14 +12,10 @@ export class SobreMiComponent implements OnInit {
 
   constructor(
     private bbddService : BbddService
-  ) { 
-    this.info_sobre_mi = bbddService.sobre_mi
-  }
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.info_sobre_mi)
+    this.info_sobre_mi = this.bbddService.sobre_mi
   }
-
-
 
 }

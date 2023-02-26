@@ -1,8 +1,4 @@
-@mixin mv( $medida : 768px){
-    @media screen and (max-width: $medida) {
-        @content
-    }
-}
+@import '/src/app/mixins.scss';
 
 main{
     width: 100%;

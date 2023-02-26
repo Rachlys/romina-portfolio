@@ -1,19 +1,14 @@
-@mixin mv( $medida :768px){
-    @media screen and (max-width: $medida) {
-        @content
-    }
-}
+ 
+@import '/src/app/mixins.scss';
 
-section{
+.section{
     width: 100%;
     height: 100%;
     border: 1px solid var(--negro);
     border-radius: 10px;
-
-
 }
 
-.buttons{
+.section__buttons{
     width: 5rem;
     display: flex;
     flex-flow: row nowrap;
@@ -48,25 +43,18 @@ section{
 }
 
 
-header{
+.section__header{
     padding: 1.5rem 1rem;
-    z-index: 1;
     width: 100%;
     height: 1.5rem;
-
     display: flex;
     justify-content: flex-end;
-
     @include mv(){
-        padding: 1.5rem  1rem 0 1rem;
-
+      padding: 1.5rem 1rem 0 1rem;
     }
 }
 
-
-
-
-.title__text{
+.section__title{
     width: 100%;
     height: 90%;
     padding: 0 0 0 3rem;
@@ -76,32 +64,44 @@ header{
     align-items: flex-start;
 
     @include mv(){
-        width: 85%;
-    }
-
-    h2{
-        padding: 1rem 0 0 0;
-        height: 5rem;
-        font-size: 100%;
         width: 100%;
-        cursor: pointer;
-
+        padding: 0 2rem;
     }
 
 }
 
-.title__h1{
+.section__title-h2{
+
+    border-radius: 10px;
+    padding: 2rem;
+    height: 3rem;
+    font-size: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--white_cream);
+    background-color: var(--negro);
+
+    @include mv(){
+        padding: 1rem;
+        align-items: flex-start;
+        width: 100%;
+        height: auto; 
+
+    }
+
+}
+.section__title-h1{
+    margin: 0 0 1.5rem 0;
     font-size: 600%;
     font-weight: bolder;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
 
-    &.italic{
-        font-style: italic;
-    }
-
     @include mv(){
+        margin: 0 0 .5rem 0;
         font-size: 300%;
     }
 }

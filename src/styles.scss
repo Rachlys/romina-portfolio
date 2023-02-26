@@ -1,4 +1,8 @@
 /* Definimos las Custom properties */
+
+:host{
+  background-color: var(--white_cream);
+}
 :root{
   /* Colores */
   --negro         : #393939;
@@ -9,7 +13,7 @@
   --white_cream   : #E0D7CF;
   --pink          : #E484A8;
   --violet        : #9092B8;
-
+  background-color: var(--white_cream);
   
 }
   
@@ -39,6 +43,7 @@
   border: 0;
   box-sizing: border-box;
   vertical-align: baseline;
+  
 }
 
 
@@ -121,7 +126,6 @@ svg{
 /* Configuramos la tipografía para toda la web */
 body {
   background-color: #E0D7CF;
-  min-height  : 100vh;
   font-size   : 100%;
   font-family : var(--tipo-principal);
   color       : var(--negro);

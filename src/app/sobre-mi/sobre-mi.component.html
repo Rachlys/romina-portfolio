@@ -1,6 +1,23 @@
+<div class="sobre_mi">
 
-    <app-window class="window" *ngFor=" let cadaInfo of info_sobre_mi"
-    [info]="cadaInfo">
+
+    <app-window class="sobre_mi__first" [info]="info_sobre_mi[0]" >
     </app-window>
 
+    <app-window class="sobre_mi__second" [info]="info_sobre_mi[1]">
+    </app-window>
 
+    <app-window class="sobre_mi__third" [info]="info_sobre_mi[2]">
+    </app-window>
+
+    <app-window class="sobre_mi__fourth" [info]="info_sobre_mi[3]">
+    </app-window>
+
+    <app-window class="sobre_mi__fifth" [info]="info_sobre_mi[4]">
+    </app-window>
+
+    <app-window class="sobre_mi__sixth" [info]="info_sobre_mi[5]">
+    </app-window> 
+
+
+</div>

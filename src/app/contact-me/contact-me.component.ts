@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BbddService } from '../services/bbdd.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-me.component.scss']
 })
 export class ContactMeComponent implements OnInit {
+  info_contact_me : Array<any> = []
 
-  constructor() { }
+
+  constructor(
+    private bbddService : BbddService
+  ) {
+    this.info_contact_me = bbddService.contact_me
+   }
 
   ngOnInit(): void {
+
   }
 
 }

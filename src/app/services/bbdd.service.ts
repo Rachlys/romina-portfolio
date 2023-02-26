@@ -10,7 +10,7 @@ export class BbddService {
     {
       dato : 'texto',
       titulo : 'SOBRE MI',
-      descripcion : 'Me encanta aprender. Desde los principios de mi formación he sido una persona muy autodidacta e interesante por temas relacionados con lo "grafico". Eso me llevo a estudiar un grado de Bellas Artes y especializarme junto con un máster de Diseño Gráfico y Diseño Web. Después de realizar este máster, descubrí que el código, a pesar de lo que pueda aparentar, no era algo tedioso si no todo lo contrario, era un nuevo mundo realmente extenso el cual descubrir y desde entonces no he dejado de formarme en el del Desarrollo Web realizando diferentes másters y cursos. Aprender cada día es algo que me llena.',
+      descripcion : 'Me llamo Romina Yupanqui Reynoso y tengo 27 años. Hace no mucho que me adentré en el mundo del desarrollo web ya que anteriormente enfoqué mis estudios en la área de lo gráfico y visual. Actualmente he conseguido mezclar ambos campos y me encanta utilizar mis habilidades artísticas para crear páginas web creativas y funcionales. Me gusta investigar nuevas herramientas y tecnologías además de trabajar en equipo para crear proyectos innovadores y de alta calidad. Estoy comprometida con mi trabajo y lista para enfrentar cualquier desafío.',
     },
 
     {
@@ -212,6 +212,10 @@ export class BbddService {
           title_svg : 'PACKAGING TEKA',
           imagen : '/assets/packaging_proyecto.jpg'
         },
+        {
+          title_svg : 'GOOGLE ADS TEKA',
+          imagen : '/assets/google_anuncios.jpg'
+        },
       ]
     },
     {
@@ -221,16 +225,16 @@ export class BbddService {
         {
           i : 'fa-solid fa-list',
           title_svg : 'TODO LIST',
-          href: 'url1'
+          href: 'https://romina-todo-list.web.app/'
         },
         {
           i : 'fa-solid fa-square-rss',
           title_svg : 'BLOG' ,
-          href: 'url2'
+          href: 'https://romina-dev.tech/Blog2022/'
         },
         {
           i : 'fa-solid fa-shapes',
-          title_svg : 'TRIAGE COPYCAT',
+          title_svg : 'TRIAGE CC',
           href: 'url2' 
         }
       ]
@@ -268,7 +272,7 @@ export class BbddService {
         {
           title_svg : 'CURRICULUM_ROMINA.pdf',
           
-          href : '/assets/CV_ROMINA_YUPANQUI_REYNOSO_2021.pdf'
+          href : '/assets/CV_ROMINA_YUPANQUI_REYNOSO_2023.pdf'
         },
       ]
     },

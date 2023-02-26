@@ -4,15 +4,14 @@
     @return $random_range;
 }
 
-@mixin mv( $medida : 768px){
-    @media screen and (max-width: $medida) {
-        @content
-    }
-}
 
+@import '/src/app/mixins.scss';
 
 .cover{
     position: absolute;
+    top: 0;
+    right: 0;
+    
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -22,7 +21,7 @@
     }
 }
 
-.circles{
+.cover__circles{
     position: absolute;
     top: 0;
     left: 0;
@@ -31,7 +30,7 @@
     overflow: hidden;
 }
 
-.circles li{
+.cover__circles li{
     position: absolute;
     display: block;
     list-style: none;
@@ -42,7 +41,7 @@
     
 }
 
-.circles li:nth-child(1){
+.cover__circles li:nth-child(1){
     background-color: var(--pink);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -54,7 +53,7 @@
 
 }
 
-.circles li:nth-child(2){
+.cover__circles li:nth-child(2){
     background-color: var(--blue);
     left: #{random_range(0% , 100%)};
     width: 15rem;
@@ -65,7 +64,7 @@
     
 }
 
-.circles li:nth-child(3){
+.cover__circles li:nth-child(3){
     background-color: var(--red);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -77,7 +76,7 @@
 
 }
 
-.circles li:nth-child(4){
+.cover__circles li:nth-child(4){
     background-color: var(--yellow);
     left: #{random_range(0% , 100%)};
     width: 15rem;
@@ -87,7 +86,7 @@
     clip-path: circle(50% at 50% 50%);
 }
 
-.circles li:nth-child(5){
+.cover__circles li:nth-child(5){
     background-color: var(--green);
     left: #{random_range(1% , 100%)};
     width: 90px;
@@ -98,7 +97,7 @@
     animation-direction: reverse;
 
 }
-.circles li:nth-child(6){
+.cover__circles li:nth-child(6){
     background-color: var(--pink);
     left: #{random_range(1% , 100%)};
     width: 90px;
@@ -109,7 +108,7 @@
     
 }
 
-.circles li:nth-child(7){
+.cover__circles li:nth-child(7){
     background-color: var(--violet);
     left: #{random_range(1% , 100%)};
     width: 90px;
@@ -121,7 +120,7 @@
 
 }
 
-.circles li:nth-child(8){
+.cover__circles li:nth-child(8){
     background-color: var(--blue);
     left: #{random_range(0% , 100%)};
     width: 80px;
@@ -131,7 +130,7 @@
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-.circles li:nth-child(9){
+.cover__circles li:nth-child(9){
     background-color: var(--red);
     left: #{random_range(0% , 100%)};
     width: 80px;
@@ -144,7 +143,7 @@
 }
 
 
-.circles li:nth-child(10){
+.cover__circles li:nth-child(10){
     background-color: var(--yellow);
     left: #{random_range(0% , 100%)};
     width: 80px;
@@ -154,7 +153,7 @@
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-.circles li:nth-child(11){
+.cover__circles li:nth-child(11){
     background-color: var(--green);
     left: #{random_range(0% , 100%)};
     width: 80px;
@@ -167,7 +166,7 @@
 }
 
 
-.circles li:nth-child(11){
+.cover__circles li:nth-child(11){
     background-color: var(--violet);
     left: #{random_range(0% , 100%)};
     width: 80px;
@@ -177,7 +176,7 @@
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-.circles li:nth-child(12){
+.cover__circles li:nth-child(12){
     background-color: var(--blue);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -189,7 +188,7 @@
 }
 
 
-.circles li:nth-child(13){
+.cover__circles li:nth-child(13){
     background-color: var(--red);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -197,7 +196,7 @@
     animation-delay: #{random_range(0 , 8)}s;
     animation-duration: #{random_range(10 , 30)}s;
 }
-.circles li:nth-child(14){
+.cover__circles li:nth-child(14){
     background-color: var(--yellow);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -208,7 +207,7 @@
 
 }
 
-.circles li:nth-child(15){
+.cover__circles li:nth-child(15){
     background-color: var(--green);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -217,7 +216,7 @@
     animation-duration: #{random_range(10 , 30)}s;
 }
 
-.circles li:nth-child(16){
+.cover__circles li:nth-child(16){
     background-color: var(--green);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -227,7 +226,7 @@
     animation-direction: reverse;
 
 }
-.circles li:nth-child(17){
+.cover__circles li:nth-child(17){
     background-color: var(--pink);
     left: #{random_range(0% , 100%)};
     width: 90px;
@@ -235,7 +234,7 @@
     animation-delay: #{random_range(0 , 8)}s;
     animation-duration: #{random_range(10 , 30)}s;
 }
-.circles li:nth-child(18){
+.cover__circles li:nth-child(18){
     background-color: var(--violet);
     left: #{random_range(0% , 100%)};
     width: 90px;

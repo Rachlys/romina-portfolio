@@ -1,0 +1,39 @@
+@import '/src/app/mixins.scss';
+
+.contactme{
+    height: 90svh;
+    width: 100svw;
+    padding: 0 6rem ;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;    
+    justify-content: space-between;
+    gap: 1rem;
+
+
+    @include mv(){
+        height: auto;
+        width: 100svw;
+        padding: 0 1rem ;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content:flex-start;
+        gap: 1rem;
+    }
+
+    .contactme__column{
+        width: calc(100%/3);
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+
+        @include mv(){
+            width: 100%;
+            height: auto;
+
+        }
+
+    }
+}

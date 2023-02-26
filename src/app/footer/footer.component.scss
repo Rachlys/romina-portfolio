@@ -1,0 +1,87 @@
+
+@import '/src/app/mixins.scss';
+
+.footer{
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 2.6rem;
+    background-color: var(--negro);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 150%;
+    color: var(--white_cream);
+    gap: 1rem;
+}
+
+.footer__message{
+    width: 10em;
+    height: 10rem;
+    left: 1rem;
+    padding: 2rem;
+    background-color: var(--negro);
+    bottom: 2.5rem;
+    position: fixed;
+}
+
+.footer__button{
+    height: 2rem;
+    width: 2rem;
+    margin: .2rem 0 0 0;
+	clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
+    background-color: var(--white_cream);
+    background-image: linear-gradient(to top,  transparent, transparent 50%, var(--pink) 50%, var(--pink) );
+    background-position: 100% 100%;
+    background-size: 100% 200%;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.footer__button:hover{
+    background-position: 0 0;
+}
+
+.footer__marquee {
+    height: 3rem;
+    width: 80vw;
+    overflow: hidden;
+    position: relative;
+  }
+  
+.footer__marquee div {
+    display: block;
+    width: 250%;
+    position: absolute;
+    bottom: .9rem;
+    animation: marquee 10s linear infinite;
+    display: flex;
+    flex-flow: row nowrap;
+    @include mv(){
+        animation: marquee 10s linear infinite;
+        width: 500%;
+        overflow: hidden;
+    }
+}
+  
+.footer__marquee span {
+    margin-right: 1rem;
+    width: calc(100%/5);
+    height: auto;
+    display: flex;
+    align-items: center;
+    font-size: 70% ;
+    font-family: 'Work Sans', sans-serif;
+    @include mv(){
+        width: 100%;
+        height: auto;
+    }
+}
+  
+@keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}

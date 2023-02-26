@@ -1,1 +1,14 @@
-<p>contact-me works!</p>
+<div class="contactme">
+
+    <div class="contactme__column">
+        <app-window class="contactme__section"[info]="info_contact_me[0]"></app-window>
+        <app-window class="contactme__section" [info]="info_contact_me[1]"></app-window>
+    </div>
+    <div class="contactme__column">
+        <app-window-form></app-window-form>
+    </div>
+    <div class="contactme__column">
+        <app-window class="contactme__section" [info]="info_contact_me[2]"></app-window>
+        <app-window class="contactme__section" [info]="info_contact_me[3]"></app-window>
+    </div>
+</div>

@@ -2,17 +2,14 @@
 <button (click)="inicio()" [ngStyle]="{'opacity' : show_button() }"><i class="fa-solid fa-arrow-left"></i> </button>
 
 
-<main>
-    <div class="main_move" [ngStyle]="{'transform' : translate()}" >
-
+<main class="main__contain">
+    <div class="main__slider" [ngStyle]="{'transform' : translate()}" >
 
         <app-background></app-background>
 
-        <div class="home">
-            
-            <app-about-me class="first"></app-about-me>
-
-            <div class="second">
+        <div class="main__nav">
+            <app-about-me class="nav__column-first"></app-about-me>
+            <div class="nav__column-second">
                 <app-window-nav class="nav" [titulo]="'Sobre mí'" (click)="sobremi()" > 
                 </app-window-nav>
                 <app-window-nav class="nav" [titulo]="'Proyectos'" (click)="proyectos()"> 
@@ -20,82 +17,14 @@
                 <app-window-nav class="nav" [titulo]="'Contáctame'" (click)="contacto()"> 
                 </app-window-nav>
             </div>
-        
-        </div>
-    
-        <div class="sobre_mi" >
-
-
-            <app-window class="sobre_mi__first" [info]="info_sobre_mi[0]" >
-            </app-window>
-
-            <app-window class="sobre_mi__second" [info]="info_sobre_mi[1]">
-            </app-window>
-
-            <app-window class="sobre_mi__third" [info]="info_sobre_mi[2]">
-            </app-window>
-
-            <app-window class="sobre_mi__fourth" [info]="info_sobre_mi[3]">
-            </app-window>
-
-            <app-window class="sobre_mi__fifth" [info]="info_sobre_mi[4]">
-            </app-window>
-
-            <app-window class="sobre_mi__sixth" [info]="info_sobre_mi[5]">
-            </app-window> 
-
-
-        </div>
-    
-        <div class="proyectos">
-
-            <app-window class="proyectos__first" [info]="info_proyectos[0]"></app-window>
-            
-            <div class="row">
-                <app-window class="proyectos__second" [info]="info_proyectos[1]"></app-window>
-                <app-window class="proyectos__third" [info]="info_proyectos[2]"></app-window>
-
-            </div>
-
-        </div>
-    
-        <div class="contact_me">
-            <div class="column">
-                <app-window class="contact_me__section"[info]="info_contact_me[0]"></app-window>
-                <app-window class="contact_me__section" [info]="info_contact_me[1]"></app-window>
-            </div>
-            <div class="column">
-                <app-window-form></app-window-form>
-            </div>
-            <div class="column">
-                <app-window class="contact_me__section" [info]="info_contact_me[2]"></app-window>
-                <app-window class="contact_me__section" [info]="info_contact_me[3]"></app-window>
-
-            </div>
         </div>
 
+        <app-sobre-mi></app-sobre-mi>
+        <app-proyectos></app-proyectos>
+        <app-contact-me></app-contact-me>
 
     </div>
     
 </main>
 
-<footer>
-
-    <div class="thank_you" *ngIf="show_thank">
-        <p *ngIf="show_thank" > Muchísimas gracias por visitarme!</p>
-    </div>
-
-    <div class="inicio" (click)="show()"></div>
-
-    <div class="marquee">
-        <div>
-          <span>MADE WITH LOVE BY ROMINA </span>
-          <span>MADE WITH LOVE BY ROMINA </span>
-          <span>MADE WITH LOVE BY ROMINA </span>
-          <span>MADE WITH LOVE BY ROMINA </span>
-          <span>MADE WITH LOVE BY ROMINA </span>
-
-        </div>
-    </div>
-
-</footer>
+<app-footer></app-footer>

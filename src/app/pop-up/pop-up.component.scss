@@ -1,15 +1,10 @@
-@mixin mv( $medida : 768px){
-    @media screen and (max-width: $medida) {
-        @content
-    }
-}
-
+@import '/src/app/mixins.scss';
 
 article{
     position: absolute;
     top: 15rem;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     width: 40rem;
     border-radius: 10px;
 

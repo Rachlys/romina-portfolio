@@ -13,7 +13,7 @@
 
     <app-main-text *ngIf="info.dato === 'texto'" [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" [p]="info.descripcion"></app-main-text>
 
-    <app-main-imagen *ngIf=" info.dato === 'imagen' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}"></app-main-imagen>
+    <app-main-imagen  *ngIf=" info.dato === 'imagen' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}"></app-main-imagen>
 
     <app-main-logos-pop [info]="info.logos_info" *ngIf="info.dato === 'logos_pop' " [ngStyle]="{ 'display' : open_close ? 'flex' : 'none'}" ></app-main-logos-pop>
 

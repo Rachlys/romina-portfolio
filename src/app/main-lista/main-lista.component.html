@@ -1,10 +1,9 @@
 <main>
+    <div class="lista" *ngFor=" let cadaExp of info.logos_info; let i = index">
 
-    <div class="exp" *ngFor=" let cadaExp of info.logos_info; let i = index">
-
-        <a class="exp__a" [href]="cadaExp.href" target="_blank" *ngIf="cadaExp.href">
-            <span class="exp__icon"><i class="fa-solid fa-file"></i></span>
-            <div class="exp__title"> <p>{{cadaExp.title_svg}}</p> </div>
+        <a class="lista__a" [href]="cadaExp.href" target="_blank" *ngIf="cadaExp.href">
+            <span class="lista__icon"><i class="fa-solid fa-file"></i></span>
+            <div class="lista__title"> <p>{{cadaExp.title_svg}}</p> </div>
         </a>
 
     </div>

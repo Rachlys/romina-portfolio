@@ -1,10 +1,4 @@
-@mixin mv( $medida : 785px){
-    @media screen and (max-width: $medida) {
-        @content
-    }
-}
-
-
+@import '/src/app/mixins.scss';
 
 main{
     height: auto;
@@ -30,6 +24,7 @@ main{
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: center;
+        gap: 1.5rem;
     }
 
 }
@@ -37,15 +32,16 @@ main{
 .logo, a {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: .5rem;
 
     @include mv{
+        gap: 0;
         width: 90%;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
     }
     
@@ -54,6 +50,13 @@ main{
 .logo__icon{
     font-size: 250%;    
     margin: 0 0 .3rem 0;
+
+    @include mv{
+        margin: 0;
+        width: 30%;
+        text-align: center;
+    }
+
 }
 
 .logo__title{

@@ -7,11 +7,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutMeComponent } from './about-me/about-me.component';
-import { ContactMeComponent } from './contact-me/contact-me.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
 import { WindowComponent } from './window/window.component';
 import { WindowNavComponent } from './window-nav/window-nav.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
@@ -28,16 +25,17 @@ import { MainListaComponent } from './main-lista/main-lista.component';
 import { MainLightboxComponent } from './main-lightbox/main-lightbox.component';
 import { MainLogosGrandesComponent } from './main-logos-grandes/main-logos-grandes.component';
 import { MainLogoUnicoComponent } from './main-logo-unico/main-logo-unico.component';
+import { FooterComponent } from './footer/footer.component';
+import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutMeComponent,
-    ContactMeComponent,
     HomeComponent,
-    HeaderComponent,
     NavComponent,
-    SobreMiComponent,
     WindowComponent,
     WindowNavComponent,
     PopUpComponent,
@@ -53,6 +51,10 @@ import { MainLogoUnicoComponent } from './main-logo-unico/main-logo-unico.compon
     MainLightboxComponent,
     MainLogosGrandesComponent,
     MainLogoUnicoComponent,
+    FooterComponent,
+    SobreMiComponent,
+    ProyectosComponent,
+    ContactMeComponent,
   ],
   imports: [
     BrowserModule,
