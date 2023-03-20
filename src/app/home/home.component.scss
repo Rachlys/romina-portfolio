@@ -37,7 +37,6 @@ button:hover{
     height: 100svh;
     transition: all 1s ease;    
     overflow-x: hidden;
-    background-color: var(--white_cream);
     position: relative;
 
 }
@@ -51,7 +50,6 @@ button:hover{
     transition: all 1s ease;
     margin: 2% 0 0 0;
     position: relative;
-    background-color: var(--white_cream);
 
     @include mv(){
         margin: 4% 0 0 0;

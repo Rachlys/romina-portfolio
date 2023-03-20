@@ -3,12 +3,15 @@
 
 
 <main class="main__contain">
+    <app-background></app-background>
+
     <div class="main__slider" [ngStyle]="{'transform' : translate()}" >
 
-        <app-background></app-background>
 
         <div class="main__nav">
+
             <app-about-me class="nav__column-first"></app-about-me>
+            
             <div class="nav__column-second">
                 <app-window-nav class="nav" [titulo]="'Sobre mí'" (click)="sobremi()" > 
                 </app-window-nav>
@@ -17,6 +20,7 @@
                 <app-window-nav class="nav" [titulo]="'Contáctame'" (click)="contacto()"> 
                 </app-window-nav>
             </div>
+        
         </div>
 
         <app-sobre-mi></app-sobre-mi>

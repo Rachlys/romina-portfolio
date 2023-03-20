@@ -147,18 +147,18 @@ export class BbddService {
           logos_info : [
     
             {
-              title_svg : 'DISEÑADORA GRÁFICA Y WEB - INVESTIGACIÓN Y ARTE', 
-              descripcion: 'Desde marzo del 2022 hasta la actuaidad me encuentro realizando de manera esporádica diferentes proyectos relacionados con la creación de contenido multimedia'
+              title_svg : 'EDICIÓN DE VÍDEO - INVESTIGACIÓN Y ARTE', 
+              descripcion: 'Desde marzo del 2022 estoy trabajando como editora de videos de manera esporádica para esta empresa. Mi trabajo consistió en editar y producir contenido visual para un proyecto. Como editora de videos, utilicé software especializado como Adobe Premiere Pro para llevar a cabo la edición de los proyectos. Gracias a esta experiencia, desarrollé habilidades en la edición de videos, la gestión de proyectos y la comunicación con el cliente.'
             },
     
             {
               title_svg : 'DISEÑADORA GRÁFICA - TEKA SPAIN', 
-              descripcion: 'Desde Mayo del 2021 hasta Marzo del 2022. Puesto enfocado en la realización de diversos proyectos gráficos tanto online como offline. Realización de proyectos para el punto de venta como folletos, tripticos, dipticos, stickers además del diseño/estudio de packagings para diferentes productos. Realización de contenido online en cuanto a recursos gráficos de diferentes formatos y características (edición/adaptación de videos, creación de fotomontajes, edición de fotografía) para web, además de realización de diferentes ads para la plataforma de Google Ads.'
+              descripcion: 'Durante el período de mayo del 2021 a marzo del 2022, trabajé como diseñadora gráfica para Teka Spain. En mi rol, fui responsable de la creación y diseño de materiales gráficos atractivos  y funcionales para diferentes plataformas y proyectos, incluyendo folletos, carteles, logos, banners, Google Ads y otros elementos visuales. Utilicé herramientas de diseño como Adobe Illustrator, Photoshop y InDesign para llevar a cabo mis tareas diarias. Colaboré con el equipo de marketing para entender las necesidades y desarrollar estrategias efectivas de diseño. '
             },
      
             {
-              title_svg : 'EDICIÓN DE VÍDEO - INVESTIGACIÓN Y ARTE',
-              descripcion: 'Desde Noviembre de 2019 - Marzo del 2020. Encargada de la gestión y creación de contenido web para una empresa dedicada a la tasación de obras artísticas. Remodelación web a través de Wordpress y gestión de contenido mediante FileZilla. Creación de contenido gráfico para RRSS y proyectos varios.'
+              title_svg : 'DISEÑADORA GRÁFICA Y WEB - INVESTIGACIÓN Y ARTE',
+              descripcion: 'Durante el período de noviembre del 2019 al marzo del 2020, trabajé como diseñadora gráfica y web. Me encargué de llevar a cabo diferentes proyectos gráficos como carteles, folletos y del ámbito web. También me encargué del diseño web utilizando diferentes herramientas como HTML, CSS y JavaScript y Wordpress. '
             }
       ] 
     }
@@ -225,17 +225,17 @@ export class BbddService {
         {
           i : 'fa-solid fa-list',
           title_svg : 'TODO LIST',
-          href: 'https://romina-todo-list.web.app/'
+          href: 'https://romina-dev.tech/Todo-list/'
         },
         {
           i : 'fa-solid fa-square-rss',
-          title_svg : 'BLOG' ,
+          title_svg : 'BLOG (en proceso)' ,
           href: 'https://romina-dev.tech/Blog2022/'
         },
         {
           i : 'fa-solid fa-shapes',
           title_svg : 'TRIAGE CC',
-          href: 'url2' 
+          href: 'https://romina-dev.tech/Triage/' 
         }
       ]
     },
