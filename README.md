@@ -3,7 +3,7 @@ Mi portfolio realizado con AngularJS.
 
 ## 🌏 Live Site
 
-Proyecto realizado para serguir practicando con AngularJS e impletar mis conocimientos en mi propio portfolio.
+Proyecto realizado para seguir practicando con AngularJS e impletar mis conocimientos en mi propio portfolio.
 
 ![image](https://user-images.githubusercontent.com/99412200/228385467-3e2a70f8-8844-4bc0-897d-0baf88d812b6.png)
 
